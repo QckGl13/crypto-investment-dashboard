@@ -47,8 +47,12 @@ def compute_component_scores(data: Dict) -> Tuple[float, Dict[str, float]]:
     coin_scores: Dict[str, float] = {}
     total = 0.0
     for symbol, coin in data.get("coins", {}).items():
-        tech_risk = float(coin.get("technical_risk", 0.5))
-        cycle_score = float(coin.get("cycle_score", 0.5))
+        # Safely handle missing or null values for technical and cycle scores.
+        # If the value is None, default to a neutral 0.5 before converting to float.
+        tech_risk_value = coin.get("technical_risk")
+        tech_risk = float(tech_risk_value if tech_risk_value is not None else 0.5)
+        cycle_score_value = coin.get("cycle_score")
+        cycle_score = float(cycle_score_value if cycle_score_value is not None else 0.5)
         # Combine component scores
         risk = (
             WEIGHTS["sentiment"] * sentiment_risk
