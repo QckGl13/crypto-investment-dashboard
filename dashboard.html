@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Investment Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+      color: #222;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    #metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .metric-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 12px;
+      min-width: 160px;
+      background: #f9f9f9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    #charts canvas {
+      max-width: 100%;
+      margin-top: 24px;
+    }
+    .video-section {
+      margin-top: 24px;
+    }
+    .video-section h3 {
+      margin-bottom: 8px;
+    }
+    .video-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .video-section li {
+      margin-bottom: 4px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Crypto Investment Dashboard</h1>
+  <div id="metrics"></div>
+  <table id="coin-table">
+    <thead>
+      <tr>
+        <th>Activo</th>
+        <th>Precio (USD)</th>
+        <th>Cambio 24h</th>
+        <th>RSI</th>
+        <th>MACD Hist</th>
+        <th>Riesgo</th>
+        <th>Recomendación</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <div id="charts"></div>
+  <div id="videos"></div>
+  <script>
+    async function loadData() {
+      const data = await fetch('data.json').then(r => r.json());
+      let analysis = {};
+      try {
+        analysis = await fetch('analysis.json').then(r => r.json());
+      } catch (e) {
+        analysis = {};
+      }
+      // Metrics
+      const metrics = document.getElementById('metrics');
+      metrics.innerHTML = '';
+      const addMetric = (title, value) => {
+        const div = document.createElement('div');
+        div.className = 'metric-card';
+        div.innerHTML = `<h3>${title}</h3><p>${value}</p>`;
+        metrics.appendChild(div);
+      };
+      addMetric('Fear &amp; Greed', `${data.fear_greed_index} (${data.sentiment_classification})`);
+      addMetric('Dominancia BTC', `${data.btc_dominance.toFixed(2)}%`);
+      addMetric('Market Cap Total', `$${(data.total_market_cap / 1e9).toFixed(2)}B`);
+      addMetric('Ciclo promedio', `${(data.average_cycle * 100).toFixed(1)}%`);
+      if (analysis.portfolio_risk !== undefined) {
+        addMetric('Riesgo Portafolio', analysis.portfolio_risk.toFixed(2));
+      }
+      // Table
+      const tbody = document.querySelector('#coin-table tbody');
+      tbody.innerHTML = '';
+      for (const symbol in data.coins) {
+        const coin = data.coins[symbol];
+        const score = analysis.scores ? analysis.scores[symbol] : null;
+        const rec = analysis.recommendations ? analysis.recommendations[symbol] : '';
+        const tr = document.createElement('tr');
+        const price = coin.price !== undefined && coin.price !== null ? Number(coin.price).toFixed(2) : '';
+        const change = coin.change_24h !== undefined && coin.change_24h !== null ? Number(coin.change_24h).toFixed(2) + '%' : '';
+        const rsi = coin.technical && coin.technical.rsi !== undefined && coin.technical.rsi !== null ? Number(coin.technical.rsi).toFixed(2) : '';
+        const macd = coin.technical && coin.technical.macd_hist !== undefined && coin.technical.macd_hist !== null ? Number(coin.technical.macd_hist).toFixed(4) : '';
+        const riskStr = score !== null && score !== undefined ? Number(score).toFixed(2) : '';
+        tr.innerHTML = `<td>${symbol}</td><td>${price}</td><td>${change}</td><td>${rsi}</td><td>${macd}</td><td>${riskStr}</td><td>${rec}</td>`;
+        tbody.appendChild(tr);
+      }
+      // Charts
+      const chartsDiv = document.getElementById('charts');
+      chartsDiv.innerHTML = '';
+      let index = 0;
+      for (const symbol in data.coins) {
+        const coin = data.coins[symbol];
+        if (!coin.technical || !coin.technical.history) continue;
+        const canvas = document.createElement('canvas');
+        canvas.id = `chart${index}`;
+        chartsDiv.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: coin.technical.history.dates,
+            datasets: [
+              {
+                label: `${symbol} Price (USD)`,
+                data: coin.technical.history.prices,
+                borderWidth: 1,
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: false,
+              },
+            },
+            elements: {
+              point: {
+                radius: 0,
+              },
+            },
+          },
+        });
+        index++;
+      }
+      // Videos
+      const videoDiv = document.getElementById('videos');
+      videoDiv.innerHTML = '<h2>Últimos videos (30 días)</h2>';
+      for (const channel in data.videos) {
+        const section = document.createElement('div');
+        section.className = 'video-section';
+        section.innerHTML = `<h3>${channel}</h3>`;
+        const list = document.createElement('ul');
+        const vids = data.videos[channel].slice(0, 5);
+        vids.forEach((v) => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${v.link}" target="_blank">${v.title}</a> <small>(${v.published.substring(0, 10)})</small>`;
+          list.appendChild(li);
+        });
+        section.appendChild(list);
+        videoDiv.appendChild(section);
+      }
+    }
+    loadData();
+  </script>
+</body>
+</html>
