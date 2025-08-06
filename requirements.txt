@@ -1,0 +1,8 @@
+requests
+pandas
+yfinance
+pandas-ta
+beautifulsoup4
+feedparser
+jinja2
+python-dotenv
