@@ -1,183 +1,437 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Investment Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      line-height: 1.5;
-      color: #222;
-    }
-    h1 {
-      margin-top: 0;
-    }
-    #metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .metric-card {
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 12px;
-      min-width: 160px;
-      background: #f9f9f9;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 24px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background-color: #f0f0f0;
-    }
-    #charts canvas {
-      max-width: 100%;
-      margin-top: 24px;
-    }
-    .video-section {
-      margin-top: 24px;
-    }
-    .video-section h3 {
-      margin-bottom: 8px;
-    }
-    .video-section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .video-section li {
-      margin-bottom: 4px;
-    }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Crypto Investment Dashboard</title>
+    <!-- Chart.js for potential chart visualisations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        /* Global reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0c0c0c, #1a1a2e);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .header .date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .card h3 {
+            color: #90cdf4;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+        .metric-value {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .green { color: #48bb78; }
+        .red { color: #f56565; }
+        .yellow { color: #ed8936; }
+        .blue { color: #4299e1; }
+        .crypto-table {
+            width: 100%;
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .crypto-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .crypto-table th,
+        .crypto-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .crypto-table th {
+            background: rgba(0,0,0,0.3);
+            color: #90cdf4;
+            font-weight: 600;
+        }
+        .crypto-table tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        .recommendation {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .recommendation h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .recommendation p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .chart-container {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .action-button {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .buy { background: #48bb78; color: white; }
+        .hold { background: #ed8936; color: white; }
+        .sell { background: #f56565; color: white; }
+        .wait { background: #4299e1; color: white; }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .youtube-feed {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .video-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        .video-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .video-thumbnail {
+            width: 60px;
+            height: 45px;
+            background: #ff0000;
+            border-radius: 5px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <h1>Crypto Investment Dashboard</h1>
-  <div id="metrics"></div>
-  <table id="coin-table">
-    <thead>
-      <tr>
-        <th>Activo</th>
-        <th>Precio (USD)</th>
-        <th>Cambio 24h</th>
-        <th>RSI</th>
-        <th>MACD Hist</th>
-        <th>Riesgo</th>
-        <th>Recomendación</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <div id="charts"></div>
-  <div id="videos"></div>
-  <script>
-    async function loadData() {
-      const data = await fetch('data.json').then(r => r.json());
-      let analysis = {};
-      try {
-        analysis = await fetch('analysis.json').then(r => r.json());
-      } catch (e) {
-        analysis = {};
-      }
-      // Metrics
-      const metrics = document.getElementById('metrics');
-      metrics.innerHTML = '';
-      const addMetric = (title, value) => {
-        const div = document.createElement('div');
-        div.className = 'metric-card';
-        div.innerHTML = `<h3>${title}</h3><p>${value}</p>`;
-        metrics.appendChild(div);
-      };
-      addMetric('Fear &amp; Greed', `${data.fear_greed_index} (${data.sentiment_classification})`);
-      addMetric('Dominancia BTC', `${data.btc_dominance.toFixed(2)}%`);
-      addMetric('Market Cap Total', `$${(data.total_market_cap / 1e9).toFixed(2)}B`);
-      addMetric('Ciclo promedio', `${(data.average_cycle * 100).toFixed(1)}%`);
-      if (analysis.portfolio_risk !== undefined) {
-        addMetric('Riesgo Portafolio', analysis.portfolio_risk.toFixed(2));
-      }
-      // Table
-      const tbody = document.querySelector('#coin-table tbody');
-      tbody.innerHTML = '';
-      for (const symbol in data.coins) {
-        const coin = data.coins[symbol];
-        const score = analysis.scores ? analysis.scores[symbol] : null;
-        const rec = analysis.recommendations ? analysis.recommendations[symbol] : '';
-        const tr = document.createElement('tr');
-        const price = coin.price !== undefined && coin.price !== null ? Number(coin.price).toFixed(2) : '';
-        const change = coin.change_24h !== undefined && coin.change_24h !== null ? Number(coin.change_24h).toFixed(2) + '%' : '';
-        const rsi = coin.technical && coin.technical.rsi !== undefined && coin.technical.rsi !== null ? Number(coin.technical.rsi).toFixed(2) : '';
-        const macd = coin.technical && coin.technical.macd_hist !== undefined && coin.technical.macd_hist !== null ? Number(coin.technical.macd_hist).toFixed(4) : '';
-        const riskStr = score !== null && score !== undefined ? Number(score).toFixed(2) : '';
-        tr.innerHTML = `<td>${symbol}</td><td>${price}</td><td>${change}</td><td>${rsi}</td><td>${macd}</td><td>${riskStr}</td><td>${rec}</td>`;
-        tbody.appendChild(tr);
-      }
-      // Charts
-      const chartsDiv = document.getElementById('charts');
-      chartsDiv.innerHTML = '';
-      let index = 0;
-      for (const symbol in data.coins) {
-        const coin = data.coins[symbol];
-        if (!coin.technical || !coin.technical.history) continue;
-        const canvas = document.createElement('canvas');
-        canvas.id = `chart${index}`;
-        chartsDiv.appendChild(canvas);
-        const ctx = canvas.getContext('2d');
-        new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels: coin.technical.history.dates,
-            datasets: [
-              {
-                label: `${symbol} Price (USD)`,
-                data: coin.technical.history.prices,
-                borderWidth: 1,
-                fill: false,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            scales: {
-              y: {
-                beginAtZero: false,
-              },
-            },
-            elements: {
-              point: {
-                radius: 0,
-              },
-            },
-          },
-        });
-        index++;
-      }
-      // Videos
-      const videoDiv = document.getElementById('videos');
-      videoDiv.innerHTML = '<h2>Últimos videos (30 días)</h2>';
-      for (const channel in data.videos) {
-        const section = document.createElement('div');
-        section.className = 'video-section';
-        section.innerHTML = `<h3>${channel}</h3>`;
-        const list = document.createElement('ul');
-        const vids = data.videos[channel].slice(0, 5);
-        vids.forEach((v) => {
-          const li = document.createElement('li');
-          li.innerHTML = `<a href="${v.link}" target="_blank">${v.title}</a> <small>(${v.published.substring(0, 10)})</small>`;
-          list.appendChild(li);
-        });
-        section.appendChild(list);
-        videoDiv.appendChild(section);
-      }
-    }
-    loadData();
-  </script>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 Crypto Investment Dashboard</h1>
+            <div class="date" id="last-updated">📅 Última actualización:</div>
+        </div>
+        <!-- Metrics cards -->
+        <div class="grid" id="metrics-grid">
+            <!-- Cards will be populated via JS -->
+        </div>
+        <!-- Recommendation banner -->
+        <div class="recommendation" id="recommendation-banner">
+            <h2>🎯 Recomendación del Día</h2>
+            <p id="recommendation-text">Cargando...</p>
+        </div>
+        <!-- Crypto table -->
+        <div class="crypto-table" id="crypto-table-container">
+            <h3 style="padding: 20px; color: #90cdf4; margin: 0;">💰 Análisis por Criptomoneda</h3>
+            <table id="crypto-table">
+                <thead>
+                    <tr>
+                        <th>Crypto</th>
+                        <th>Precio</th>
+                        <th>Cambio 24h</th>
+                        <th>RSI</th>
+                        <th>Riesgo</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <!-- Cycle models -->
+        <div class="chart-container" id="cycle-models">
+            <h3 style="color: #90cdf4; margin-bottom: 20px;">📈 Modelos de Ciclo</h3>
+            <div class="grid" id="cycle-grid">
+                <!-- Cycle model cards will be inserted here -->
+            </div>
+        </div>
+        <!-- YouTube feed -->
+        <div class="youtube-feed" id="youtube-feed">
+            <h3 style="color: #90cdf4; margin-bottom: 20px;">📺 Últimos Videos de YouTubers</h3>
+            <div id="videos-container">
+                <!-- Video items will be inserted here -->
+            </div>
+        </div>
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 40px; padding: 20px; opacity: 0.7;">
+            <p>🔄 Actualización automática diaria a las 6:00 AM CDMX</p>
+            <p>📧 Reporte enviado automáticamente a tu email</p>
+        </div>
+    </div>
+    <script>
+        /**
+         * Derive a recommendation string based on a numeric risk value.
+         * Mirrors the logic from the Python analysis engine.
+         */
+        function deriveRecommendation(risk) {
+            if (risk < 0.4) return "Comprar";
+            if (risk < 0.6) return "Mantener";
+            return "Vender";
+        }
+
+        /**
+         * Determine a risk classification and a CSS class for a given risk score.
+         */
+        function riskClassification(risk) {
+            if (risk < 0.33) return { label: "Bajo", className: "green" };
+            if (risk < 0.66) return { label: "Medio", className: "yellow" };
+            return { label: "Alto", className: "red" };
+        }
+
+        /**
+         * Compute cycle model statuses based on average cycle (0–100).
+         */
+        function computeCycleModels(avgCycle) {
+            const models = [];
+            // Pi Cycle Top indicator
+            let pct = avgCycle;
+            let pctLabel = pct.toFixed(0) + "%";
+            let pctDesc;
+            let pctColor;
+            if (pct < 40) {
+                pctDesc = "Lejos del tope";
+                pctColor = "blue";
+            } else if (pct < 70) {
+                pctDesc = "En rango medio";
+                pctColor = "yellow";
+            } else {
+                pctDesc = "Cerca del tope de ciclo";
+                pctColor = "red";
+            }
+            models.push({ name: "Pi Cycle Top", value: pctLabel, desc: pctDesc, color: pctColor });
+            // Power Law
+            // For simplicity, use avgCycle to determine state
+            let plDesc;
+            let plColor;
+            if (pct < 60) {
+                plDesc = "Dentro del canal";
+                plColor = "green";
+            } else if (pct < 80) {
+                plDesc = "Cerca de la parte alta";
+                plColor = "yellow";
+            } else {
+                plDesc = "Fuera del canal";
+                plColor = "red";
+            }
+            models.push({ name: "Power Law", value: pct < 100 ? "Dentro del canal" : "", desc: plDesc, color: plColor });
+            // Rainbow Chart
+            let rcDesc;
+            let rcColor;
+            if (pct < 30) {
+                rcDesc = "Zona Azul";
+                rcColor = "blue";
+            } else if (pct < 50) {
+                rcDesc = "Zona Verde";
+                rcColor = "green";
+            } else if (pct < 70) {
+                rcDesc = "Zona Naranja";
+                rcColor = "yellow";
+            } else {
+                rcDesc = "Zona Roja";
+                rcColor = "red";
+            }
+            models.push({ name: "Rainbow Chart", value: rcDesc, desc: rcDesc === "Zona Roja" ? "Posible burbuja" : (rcDesc === "Zona Naranja" ? "Sobreprecio moderado" : (rcDesc === "Zona Verde" ? "Zona de acumulación" : "Zona muy temprana")), color: rcColor });
+            return models;
+        }
+
+        /**
+         * Format relative time from a given ISO timestamp to a human readable string.
+         */
+        function timeSince(dateStr) {
+            const now = new Date();
+            const past = new Date(dateStr);
+            const diffMs = now - past;
+            const diffSec = diffMs / 1000;
+            const diffMin = diffSec / 60;
+            const diffHour = diffMin / 60;
+            const diffDay = diffHour / 24;
+            if (diffHour < 1) return `${Math.max(1, Math.floor(diffMin))} minutos`;
+            if (diffHour < 24) return `${Math.floor(diffHour)} horas`;
+            return `${Math.floor(diffDay)} días`;
+        }
+
+        async function loadDashboard() {
+            const data = await fetch('data.json').then(r => r.json());
+            let analysis = {};
+            try {
+                analysis = await fetch('analysis.json').then(r => r.json());
+            } catch (err) {
+                analysis = {};
+            }
+            // Update last updated date
+            const updated = new Date(data.generated_at);
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'America/Mexico_City' };
+            document.getElementById('last-updated').textContent = `📅 Última actualización: ${updated.toLocaleDateString('es-MX', options)}`;
+            // Populate metrics cards
+            const metricsGrid = document.getElementById('metrics-grid');
+            metricsGrid.innerHTML = '';
+            // Fear & Greed
+            const fngValue = data.fear_greed_index;
+            const fngClass = data.sentiment_classification;
+            let fngTrend = '↗';
+            if (fngValue < 50) fngTrend = '↘';
+            let fngInterpret = fngValue > 65 ? 'Comprar' : (fngValue < 35 ? 'Vender' : 'Esperar');
+            metricsGrid.innerHTML += `<div class="card"><h3>😱 Fear & Greed Index</h3><div class="metric"><span>Valor actual</span><span class="metric-value yellow">${fngValue} - ${fngClass}</span></div><div class="metric"><span>Tendencia</span><span class="metric-value ${fngValue >= 50 ? 'green' : 'red'}">${fngValue >= 50 ? '↗ Subiendo' : '↘ Bajando'}</span></div><div class="metric"><span>Interpretación</span><span class="metric-value">Es tiempo de ${fngInterpret.toLowerCase()}</span></div></div>`;
+            // CBBI / Cycle score card using average_cycle
+            const avgCyclePct = data.average_cycle * 100;
+            let cycleState;
+            let cycleRisk;
+            if (avgCyclePct < 30) { cycleState = 'Temprano'; cycleRisk = 'Bajo'; }
+            else if (avgCyclePct < 60) { cycleState = 'Medio'; cycleRisk = 'Moderado'; }
+            else { cycleState = 'Avanzado'; cycleRisk = 'Alto'; }
+            metricsGrid.innerHTML += `<div class="card"><h3>📊 CBBI Score</h3><div class="metric"><span>Puntuación</span><span class="metric-value yellow">${avgCyclePct.toFixed(0)}/100</span></div><div class="metric"><span>Estado del ciclo</span><span class="metric-value ${avgCyclePct < 60 ? 'yellow' : 'red'}">${cycleState}</span></div><div class="metric"><span>Riesgo</span><span class="metric-value ${cycleRisk === 'Alto' ? 'red' : (cycleRisk === 'Moderado' ? 'yellow' : 'green')}">${cycleRisk}</span></div></div>`;
+            // Dominancia BTC card
+            const domPct = data.btc_dominance;
+            const domTrend = domPct >= 50 ? '↗' : '↘';
+            let altImpact;
+            let altClass;
+            if (domPct > 55) { altImpact = 'Riesgo alto'; altClass = 'red'; }
+            else if (domPct > 45) { altImpact = 'Moderado'; altClass = 'yellow'; }
+            else { altImpact = 'Bajo'; altClass = 'green'; }
+            metricsGrid.innerHTML += `<div class="card"><h3>👑 Dominancia BTC</h3><div class="metric"><span>Porcentaje</span><span class="metric-value blue">${domPct.toFixed(1)}%</span></div><div class="metric"><span>Tendencia</span><span class="metric-value ${domPct >= 50 ? 'green' : 'red'}">${domPct >= 50 ? '↗ Subiendo' : '↘ Bajando'}</span></div><div class="metric"><span>Impacto altcoins</span><span class="metric-value ${altClass}">${altImpact}</span></div></div>`;
+            // Composite risk card
+            const portfolioRisk = analysis.portfolio_risk !== undefined ? analysis.portfolio_risk * 100 : 50;
+            let riskLevel;
+            let riskClass;
+            let actionSuggestion;
+            if (portfolioRisk < 40) { riskLevel = 'Bajo'; riskClass = 'green'; actionSuggestion = 'Comprar'; }
+            else if (portfolioRisk < 70) { riskLevel = 'Moderado'; riskClass = 'yellow'; actionSuggestion = 'Mantener'; }
+            else { riskLevel = 'Alto'; riskClass = 'red'; actionSuggestion = 'Vender'; }
+            metricsGrid.innerHTML += `<div class="card"><h3>⚠ Riesgo Compuesto</h3><div class="metric"><span>Puntuación total</span><span class="metric-value ${riskClass}">${portfolioRisk.toFixed(0)}/100</span></div><div class="metric"><span>Nivel</span><span class="metric-value ${riskClass}">${riskLevel}</span></div><div class="metric"><span>Acción sugerida</span><span class="metric-value ${riskClass === 'green' ? 'green' : (riskClass === 'yellow' ? 'yellow' : 'red')}">${actionSuggestion}</span></div></div>`;
+            // Recommendation banner text
+            const overallRec = analysis.portfolio_risk !== undefined ? deriveRecommendation(analysis.portfolio_risk) : 'Mantener';
+            document.getElementById('recommendation-text').innerHTML = `<strong>Es tiempo de ${overallRec.toUpperCase()}.</strong> El mercado muestra un riesgo ${riskLevel.toLowerCase()}. Considera ajustar tus posiciones según las señales técnicas y sociales.`;
+            // Populate crypto table
+            const tbody = document.querySelector('#crypto-table tbody');
+            tbody.innerHTML = '';
+            const coins = data.coins;
+            // Sort keys alphabetically for consistency
+            const coinKeys = Object.keys(coins).sort();
+            coinKeys.forEach(sym => {
+                const coin = coins[sym];
+                const riskScore = analysis.scores && analysis.scores[sym] !== undefined ? analysis.scores[sym] : 0.5;
+                const classification = riskClassification(riskScore);
+                const action = analysis.recommendations && analysis.recommendations[sym] ? analysis.recommendations[sym] : deriveRecommendation(riskScore);
+                const actionClass = action === 'Comprar' ? 'buy' : (action === 'Mantener' ? 'hold' : (action === 'Vender' ? 'sell' : 'wait'));
+                const price = coin.price !== null && coin.price !== undefined ? `$${Number(coin.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : '';
+                const change = coin.change_24h !== null && coin.change_24h !== undefined ? `${Number(coin.change_24h).toFixed(2)}%` : '';
+                const rsi = coin.technical && coin.technical.rsi !== undefined && coin.technical.rsi !== null ? Number(coin.technical.rsi).toFixed(1) : '';
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td><strong>${sym}</strong></td><td>${price}</td><td class="${Number(coin.change_24h) >= 0 ? 'green' : 'red'}">${change}</td><td class="${coin.technical && coin.technical.rsi >= 70 ? 'red' : (coin.technical && coin.technical.rsi <= 30 ? 'green' : 'yellow')}">${rsi}</td><td><span class="status-indicator ${classification.className}"></span>${classification.label}</td><td><button class="action-button ${actionClass}">${action.toUpperCase()}</button></td>`;
+                tbody.appendChild(tr);
+            });
+            // Populate cycle models
+            const cycleGrid = document.getElementById('cycle-grid');
+            cycleGrid.innerHTML = '';
+            const models = computeCycleModels(avgCyclePct);
+            models.forEach(model => {
+                // Use CSS color classes defined above (green, red, yellow, blue) for the value
+                cycleGrid.innerHTML += `<div style="text-align: center;"><h4 style="color: #f093fb; margin-bottom: 10px;">${model.name}</h4><div class="${model.color}" style="font-size: 2rem;">${model.value}</div><p>${model.desc}</p></div>`;
+            });
+            // Populate YouTube feed with latest videos across all channels (sorted by date)
+            const videosList = [];
+            for (const ch in data.videos) {
+                data.videos[ch].forEach(v => {
+                    videosList.push({ channel: ch, ...v });
+                });
+            }
+            videosList.sort((a, b) => new Date(b.published) - new Date(a.published));
+            const videosContainer = document.getElementById('videos-container');
+            videosContainer.innerHTML = '';
+            const maxVideos = 5;
+            videosList.slice(0, maxVideos).forEach(v => {
+                const timeAgo = timeSince(v.published);
+                // Build a hint string based on insights
+                let hint = '';
+                if (v.insights && v.insights.keywords && v.insights.keywords.length > 0) {
+                    hint = v.insights.keywords.slice(0, 3).join(', ');
+                }
+                videosContainer.innerHTML += `<div class="video-item"><div class="video-thumbnail">▶</div><div><strong>${v.channel}</strong> - "${v.title}"<br><small style="opacity: 0.7;">Hace ${timeAgo} • ${hint}</small></div></div>`;
+            });
+        }
+        // Load the dashboard when the page is ready
+        loadDashboard().catch(err => console.error(err));
+    </script>
 </body>
 </html>
