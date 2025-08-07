@@ -1,9 +1,9 @@
 {
-  "generated_at": "2025-08-07T04:59:04.446029Z",
+  "generated_at": "2025-08-07T11:38:06.688434Z",
   "fear_greed_index": 62,
   "sentiment_classification": "Greed",
-  "btc_dominance": 59.661095488631275,
-  "total_market_cap": 3814715545645.144,
+  "btc_dominance": 59.47089497012064,
+  "total_market_cap": 3906638536866.623,
   "average_cycle": 0.5,
   "videos": {
     "Benjamin Cowen": [
@@ -85,7 +85,7 @@
     ],
     "Jason Pizzino": [
       {
-        "title": "This Move Happens Every Year (How I\u2019m Investing This Time)",
+        "title": "The August Rally and Crash (How I\u2019m Investing This Time)",
         "link": "https://www.youtube.com/watch?v=Ynl8zJXWsOE",
         "published": "2025-08-07T02:15:05"
       },
@@ -162,7 +162,7 @@
     ],
     "Michael Pizzino": [
       {
-        "title": "This Move Happens Every Year (How I\u2019m Investing This Time)",
+        "title": "The August Rally and Crash (How I\u2019m Investing This Time)",
         "link": "https://www.youtube.com/watch?v=Ynl8zJXWsOE",
         "published": "2025-08-07T02:15:05"
       },
@@ -313,69 +313,146 @@
         "link": "https://www.youtube.com/watch?v=xQwCDhtTeKM",
         "published": "2025-07-22T02:20:54"
       }
+    ],
+    "Paul Barron Network": [
+      {
+        "title": "NOT Priced In?\ud83d\udcc8Crypto Market Update",
+        "link": "https://www.youtube.com/watch?v=F55uDcraf2s",
+        "published": "2025-08-06T20:07:19"
+      },
+      {
+        "title": "OpenAI + Hedera?\ud83d\ude80$HBAR INTERVIEW\ud83d\udd25",
+        "link": "https://www.youtube.com/watch?v=TVjeAIJmtpo",
+        "published": "2025-08-06T13:00:52"
+      },
+      {
+        "title": "Trump Unleashes on Banks!\ud83d\udd25CNBC Call Crashes Market\ud83d\udcc9",
+        "link": "https://www.youtube.com/watch?v=PH1imR_fxos",
+        "published": "2025-08-05T19:11:13"
+      },
+      {
+        "title": "Franklin Templeton Making It Rain DeFi Yields!?\ud83d\udcb2Sandy Kaul INTERVIEW",
+        "link": "https://www.youtube.com/watch?v=UOFyn1kEybQ",
+        "published": "2025-08-04T19:54:30"
+      },
+      {
+        "title": "Shakeout Rally vs Uncertainty\ud83d\ude80Crypto Market Update",
+        "link": "https://www.youtube.com/watch?v=9DJD5bNm_SM",
+        "published": "2025-08-04T19:29:03"
+      },
+      {
+        "title": "Crypto Sentiment Shift in 2025\ud83d\udcc8CoinDepo INTERVIEW",
+        "link": "https://www.youtube.com/watch?v=ed9iqpCsuBQ",
+        "published": "2025-08-03T16:00:59"
+      },
+      {
+        "title": "White House Backs ETH on 10-Year Birthday\ud83c\udf89Wallstreet Incoming",
+        "link": "https://www.youtube.com/watch?v=CCnEWuMWd3c",
+        "published": "2025-08-01T20:03:40"
+      },
+      {
+        "title": "Tariff Wreck-oning Day!\ud83d\udd25Crypto Market Update\ud83d\udd25",
+        "link": "https://www.youtube.com/watch?v=zj2GHjqDG0A",
+        "published": "2025-08-01T19:57:44"
+      },
+      {
+        "title": "AVAX DeFi Explodes!!!\ud83d\ude80@elliotrades_official Blackhole INTERVIEW\ud83d\udd25",
+        "link": "https://www.youtube.com/watch?v=A_1EDZCXnbk",
+        "published": "2025-07-31T21:00:27"
+      },
+      {
+        "title": "Fed Recovery Pump\ud83d\ude80Technical Analysis w/ @TimWarrenTrades",
+        "link": "https://www.youtube.com/watch?v=5V4iB-8qu0k",
+        "published": "2025-07-31T19:28:07"
+      },
+      {
+        "title": "Fed Meeting LIVE!\ud83d\udd34Jerome Powell Rate Cut vs Crypto Market\ud83d\udd25",
+        "link": "https://www.youtube.com/watch?v=4tcGwdRCsNU",
+        "published": "2025-07-30T19:26:54"
+      },
+      {
+        "title": "$600 Tariff Rebate Check!\ud83d\udd25What Crypto To Buy?\ud83d\ude80",
+        "link": "https://www.youtube.com/watch?v=2mn7JDE8eBk",
+        "published": "2025-07-29T20:14:41"
+      },
+      {
+        "title": "Rate Cut Predictions\ud83d\udea8Fed Meeting Tomorrow!",
+        "link": "https://www.youtube.com/watch?v=lKBqvtQtj4w",
+        "published": "2025-07-29T19:54:10"
+      },
+      {
+        "title": "JP Morgan vs Ripple!\ud83d\udea8Banks Target Crypto Apps & Ripple Banking!\ud83d\udd25",
+        "link": "https://www.youtube.com/watch?v=Il6h5n7H0Zw",
+        "published": "2025-07-28T19:54:56"
+      },
+      {
+        "title": "Fed Meeting Volatility Week Incoming\ud83d\udcc9Crypto Market Update",
+        "link": "https://www.youtube.com/watch?v=GBty2hAqBeE",
+        "published": "2025-07-28T19:32:54"
+      }
     ]
   },
   "coins": {
     "BTCUSDT": {
-      "price": 114333,
-      "market_cap": 2275704131157.251,
-      "change_24h": 0.8078467882086913,
+      "price": 116624,
+      "market_cap": 2321507403975.0386,
+      "change_24h": 2.033348054946414,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ETHUSDT": {
-      "price": 3660.61,
-      "market_cap": 441833398268.2932,
-      "change_24h": 2.4299017753775987,
+      "price": 3818.56,
+      "market_cap": 460963217542.2379,
+      "change_24h": 5.358441542145594,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "XRPUSDT": {
-      "price": 2.97,
-      "market_cap": 176430762995.2936,
-      "change_24h": 2.205113621502584,
+      "price": 3.08,
+      "market_cap": 182608266495.81375,
+      "change_24h": 4.3153222654288195,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ADAUSDT": {
-      "price": 0.735662,
-      "market_cap": 26621428069.871395,
-      "change_24h": 3.17678999496619,
+      "price": 0.76505,
+      "market_cap": 27685470032.841137,
+      "change_24h": 5.142952978763859,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "AVAXUSDT": {
-      "price": 21.99,
-      "market_cap": 9290305018.232742,
-      "change_24h": 1.2950962114708724,
+      "price": 22.79,
+      "market_cap": 9625342128.451061,
+      "change_24h": 3.529424288044378,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VETUSDT": {
-      "price": 0.02325317,
-      "market_cap": 1999671725.014629,
-      "change_24h": 2.860692362978151,
+      "price": 0.02408036,
+      "market_cap": 2070337047.2961614,
+      "change_24h": 3.77209123971729,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VTHOUSDT": {
-      "price": 0.00183499,
-      "market_cap": 169898065.1875889,
-      "change_24h": 2.4793830197526243,
+      "price": 0.00187929,
+      "market_cap": 173969715.36002183,
+      "change_24h": 3.137965115177747,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "LUNAUSDT": {
-      "price": 5.864e-05,
-      "market_cap": 328700221.8507419,
-      "change_24h": 2.905661825451199,
+      "price": 6.042e-05,
+      "market_cap": 338711870.8383981,
+      "change_24h": 4.440279606832066,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
