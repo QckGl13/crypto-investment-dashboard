@@ -1,24 +1,24 @@
 {
-  "generated_at": "2025-08-07T01:51:12.619417Z",
-  "portfolio_risk": 0.4892609738961816,
+  "generated_at": "2025-08-07T03:42:52.375276Z",
+  "portfolio_risk": 0.48943719299174765,
   "recommendations": {
-    "BTC-USD": "Mantener",
-    "ETH-USD": "Mantener",
-    "XRP-USD": "Mantener",
-    "ADA-USD": "Mantener",
-    "AVAX-USD": "Mantener",
-    "VET-USD": "Mantener",
-    "VTHO-USD": "Mantener",
-    "LUNA1-USD": "Mantener"
+    "BTCUSDT": "Mantener",
+    "ETHUSDT": "Mantener",
+    "XRPUSDT": "Mantener",
+    "ADAUSDT": "Mantener",
+    "AVAXUSDT": "Mantener",
+    "VETUSDT": "Mantener",
+    "VTHOUSDT": "Mantener",
+    "LUNAUSDT": "Mantener"
   },
   "scores": {
-    "BTC-USD": 0.48926097389618156,
-    "ETH-USD": 0.48926097389618156,
-    "XRP-USD": 0.48926097389618156,
-    "ADA-USD": 0.48926097389618156,
-    "AVAX-USD": 0.48926097389618156,
-    "VET-USD": 0.48926097389618156,
-    "VTHO-USD": 0.48926097389618156,
-    "LUNA1-USD": 0.48926097389618156
+    "BTCUSDT": 0.4894371929917477,
+    "ETHUSDT": 0.4894371929917477,
+    "XRPUSDT": 0.4894371929917477,
+    "ADAUSDT": 0.4894371929917477,
+    "AVAXUSDT": 0.4894371929917477,
+    "VETUSDT": 0.4894371929917477,
+    "VTHOUSDT": 0.4894371929917477,
+    "LUNAUSDT": 0.4894371929917477
   }
 }

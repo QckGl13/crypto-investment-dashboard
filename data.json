@@ -1,12 +1,17 @@
 {
-  "generated_at": "2025-08-07T01:51:12.527177Z",
+  "generated_at": "2025-08-07T03:42:52.281820Z",
   "fear_greed_index": 62,
   "sentiment_classification": "Greed",
-  "btc_dominance": 59.63048694809078,
-  "total_market_cap": 3840419565010.177,
+  "btc_dominance": 59.71859649587385,
+  "total_market_cap": 3818684037585.093,
   "average_cycle": 0.5,
   "videos": {
     "Benjamin Cowen": [
+      {
+        "title": "Bitcoin Monthly Returns",
+        "link": "https://www.youtube.com/watch?v=G5IEOvGueGU",
+        "published": "2025-08-07T02:50:39"
+      },
       {
         "title": "Why Does This Crypto Cycle Feel Different?",
         "link": "https://www.youtube.com/watch?v=uUuq9uw7mBI",
@@ -76,15 +81,15 @@
         "title": "Investing $1,000 Into Crypto?",
         "link": "https://www.youtube.com/watch?v=fFaDfy1scWU",
         "published": "2025-07-22T17:32:37"
-      },
-      {
-        "title": "Ethereum: A Realistic Price Prediction For This Market Cycle",
-        "link": "https://www.youtube.com/watch?v=kfg7dNU7TJk",
-        "published": "2025-07-21T05:58:32"
       }
     ],
     "Jason Pizzino": [
       {
+        "title": "This Move Happens Every Year (How I\u2019m Investing This Time)",
+        "link": "https://www.youtube.com/watch?v=Ynl8zJXWsOE",
+        "published": "2025-08-07T02:15:05"
+      },
+      {
         "title": "The Multi-Year Crypto Crash Against Bitcoin (explained and updated)",
         "link": "https://www.youtube.com/watch?v=0BWMhLzFrzM",
         "published": "2025-08-05T02:37:20"
@@ -153,15 +158,15 @@
         "title": "This is BLOWING UP (My Cycle Top Signal for ETH & BTC)",
         "link": "https://www.youtube.com/watch?v=u2CPElRUDqU",
         "published": "2025-07-16T03:16:04"
-      },
-      {
-        "title": "This Has Never Happened Before",
-        "link": "https://www.youtube.com/watch?v=d4m9lcQ3VbY",
-        "published": "2025-07-15T01:36:44"
       }
     ],
     "Michael Pizzino": [
       {
+        "title": "This Move Happens Every Year (How I\u2019m Investing This Time)",
+        "link": "https://www.youtube.com/watch?v=Ynl8zJXWsOE",
+        "published": "2025-08-07T02:15:05"
+      },
+      {
         "title": "The Multi-Year Crypto Crash Against Bitcoin (explained and updated)",
         "link": "https://www.youtube.com/watch?v=0BWMhLzFrzM",
         "published": "2025-08-05T02:37:20"
@@ -230,11 +235,6 @@
         "title": "This is BLOWING UP (My Cycle Top Signal for ETH & BTC)",
         "link": "https://www.youtube.com/watch?v=u2CPElRUDqU",
         "published": "2025-07-16T03:16:04"
-      },
-      {
-        "title": "This Has Never Happened Before",
-        "link": "https://www.youtube.com/watch?v=d4m9lcQ3VbY",
-        "published": "2025-07-15T01:36:44"
       }
     ],
     "Crypto Capital Venture": [
@@ -316,66 +316,66 @@
     ]
   },
   "coins": {
-    "BTC-USD": {
-      "price": 114991,
-      "market_cap": 2288922489502.1978,
-      "change_24h": 1.0907129958449788,
+    "BTCUSDT": {
+      "price": 114581,
+      "market_cap": 2280365356563.8496,
+      "change_24h": 0.9714815071505462,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
-    "ETH-USD": {
-      "price": 3691.11,
-      "market_cap": 445598673811.4006,
-      "change_24h": 3.1611169311149343,
+    "ETHUSDT": {
+      "price": 3658.91,
+      "market_cap": 441528139178.19977,
+      "change_24h": 2.192061063108996,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
-    "XRP-USD": {
-      "price": 3.0,
-      "market_cap": 177941517370.88376,
-      "change_24h": 2.114376709254532,
+    "XRPUSDT": {
+      "price": 2.97,
+      "market_cap": 176206195751.16522,
+      "change_24h": 1.8231424461206447,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
-    "ADA-USD": {
-      "price": 0.742415,
-      "market_cap": 26868884040.35768,
-      "change_24h": 3.5967860332395762,
+    "ADAUSDT": {
+      "price": 0.735803,
+      "market_cap": 26620898270.513783,
+      "change_24h": 3.0618429107331844,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
-    "AVAX-USD": {
-      "price": 22.26,
-      "market_cap": 9401075394.861588,
-      "change_24h": 2.4715216742714197,
+    "AVAXUSDT": {
+      "price": 22.03,
+      "market_cap": 9303128903.787294,
+      "change_24h": 1.5803486022437263,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
-    "VET-USD": {
-      "price": 0.0236381,
-      "market_cap": 2033061309.3666737,
-      "change_24h": 4.214840960272597,
+    "VETUSDT": {
+      "price": 0.02325287,
+      "market_cap": 1999427813.5518312,
+      "change_24h": 3.083930270335502,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
-    "VTHO-USD": {
-      "price": 0.00183579,
-      "market_cap": 170008007.08363864,
-      "change_24h": 1.887119269948009,
+    "VTHOUSDT": {
+      "price": 0.00183398,
+      "market_cap": 169766768.56235605,
+      "change_24h": 2.0403729556313475,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
-    "LUNA1-USD": {
-      "price": 5.902e-05,
-      "market_cap": 330811427.0766583,
-      "change_24h": 3.510162882310181,
+    "LUNAUSDT": {
+      "price": 5.854e-05,
+      "market_cap": 328089632.5329306,
+      "change_24h": 3.025043852982637,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
