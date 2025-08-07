@@ -1,9 +1,9 @@
 {
-  "generated_at": "2025-08-07T03:42:52.281820Z",
+  "generated_at": "2025-08-07T04:11:39.449359Z",
   "fear_greed_index": 62,
   "sentiment_classification": "Greed",
-  "btc_dominance": 59.71859649587385,
-  "total_market_cap": 3818684037585.093,
+  "btc_dominance": 59.718698271736,
+  "total_market_cap": 3817122839245.33,
   "average_cycle": 0.5,
   "videos": {
     "Benjamin Cowen": [
@@ -317,65 +317,65 @@
   },
   "coins": {
     "BTCUSDT": {
-      "price": 114581,
-      "market_cap": 2280365356563.8496,
-      "change_24h": 0.9714815071505462,
+      "price": 114642,
+      "market_cap": 2280520208334.991,
+      "change_24h": 1.0365334088915223,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ETHUSDT": {
-      "price": 3658.91,
-      "market_cap": 441528139178.19977,
-      "change_24h": 2.192061063108996,
+      "price": 3663.66,
+      "market_cap": 441832783239.25757,
+      "change_24h": 2.414772746357513,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "XRPUSDT": {
       "price": 2.97,
-      "market_cap": 176206195751.16522,
-      "change_24h": 1.8231424461206447,
+      "market_cap": 176198782721.20764,
+      "change_24h": 2.10191047457719,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ADAUSDT": {
-      "price": 0.735803,
-      "market_cap": 26620898270.513783,
-      "change_24h": 3.0618429107331844,
+      "price": 0.735595,
+      "market_cap": 26602153400.552826,
+      "change_24h": 3.3567193892957286,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "AVAXUSDT": {
       "price": 22.03,
-      "market_cap": 9303128903.787294,
-      "change_24h": 1.5803486022437263,
+      "market_cap": 9297473101.56416,
+      "change_24h": 1.8875823490259083,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VETUSDT": {
-      "price": 0.02325287,
-      "market_cap": 1999427813.5518312,
-      "change_24h": 3.083930270335502,
+      "price": 0.02330114,
+      "market_cap": 2000265218.3804047,
+      "change_24h": 3.356430582311444,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VTHOUSDT": {
-      "price": 0.00183398,
-      "market_cap": 169766768.56235605,
-      "change_24h": 2.0403729556313475,
+      "price": 0.00183658,
+      "market_cap": 169624118.48699582,
+      "change_24h": 2.6441037703705588,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "LUNAUSDT": {
-      "price": 5.854e-05,
-      "market_cap": 328089632.5329306,
-      "change_24h": 3.025043852982637,
+      "price": 5.849e-05,
+      "market_cap": 327899945.9988096,
+      "change_24h": 2.998831842788124,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
