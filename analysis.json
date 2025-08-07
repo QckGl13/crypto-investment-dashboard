@@ -1,1 +1,24 @@
-{}
+{
+  "generated_at": "2025-08-07T01:51:12.619417Z",
+  "portfolio_risk": 0.4892609738961816,
+  "recommendations": {
+    "BTC-USD": "Mantener",
+    "ETH-USD": "Mantener",
+    "XRP-USD": "Mantener",
+    "ADA-USD": "Mantener",
+    "AVAX-USD": "Mantener",
+    "VET-USD": "Mantener",
+    "VTHO-USD": "Mantener",
+    "LUNA1-USD": "Mantener"
+  },
+  "scores": {
+    "BTC-USD": 0.48926097389618156,
+    "ETH-USD": 0.48926097389618156,
+    "XRP-USD": 0.48926097389618156,
+    "ADA-USD": 0.48926097389618156,
+    "AVAX-USD": 0.48926097389618156,
+    "VET-USD": 0.48926097389618156,
+    "VTHO-USD": 0.48926097389618156,
+    "LUNA1-USD": 0.48926097389618156
+  }
+}
