@@ -1,9 +1,9 @@
 {
-  "generated_at": "2025-08-07T11:38:06.688434Z",
+  "generated_at": "2025-08-07T13:43:08.433367Z",
   "fear_greed_index": 62,
   "sentiment_classification": "Greed",
-  "btc_dominance": 59.47089497012064,
-  "total_market_cap": 3906638536866.623,
+  "btc_dominance": 59.366404161372635,
+  "total_market_cap": 3904217106688.692,
   "average_cycle": 0.5,
   "videos": {
     "Benjamin Cowen": [
@@ -239,6 +239,11 @@
     ],
     "Crypto Capital Venture": [
       {
+        "title": "Trump CRYPTO Executive Order TODAY! SUI & CARDANO In Crosshairs!",
+        "link": "https://www.youtube.com/watch?v=F2eHF-KAy5o",
+        "published": "2025-08-07T13:08:06"
+      },
+      {
         "title": "ETHEREUM Move That Could Trigger Altcoin Mania (RARE PREDICTION)",
         "link": "https://www.youtube.com/watch?v=UpLjLfRIjDM",
         "published": "2025-08-07T01:09:59"
@@ -307,11 +312,6 @@
         "title": "CARDANO Window Is Closing....FAST (Setup IS INSANE)",
         "link": "https://www.youtube.com/watch?v=hX6Qp1dZZ_M",
         "published": "2025-07-22T16:28:43"
-      },
-      {
-        "title": "Warning Shot: ALTCOIN SEASON Signals Are Piling Up...",
-        "link": "https://www.youtube.com/watch?v=xQwCDhtTeKM",
-        "published": "2025-07-22T02:20:54"
       }
     ],
     "Paul Barron Network": [
@@ -394,65 +394,65 @@
   },
   "coins": {
     "BTCUSDT": {
-      "price": 116624,
-      "market_cap": 2321507403975.0386,
-      "change_24h": 2.033348054946414,
+      "price": 116643,
+      "market_cap": 2320191278161.078,
+      "change_24h": 2.3909499197579565,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ETHUSDT": {
-      "price": 3818.56,
-      "market_cap": 460963217542.2379,
-      "change_24h": 5.358441542145594,
+      "price": 3849.51,
+      "market_cap": 463945818556.397,
+      "change_24h": 7.144781755072429,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "XRPUSDT": {
       "price": 3.08,
-      "market_cap": 182608266495.81375,
-      "change_24h": 4.3153222654288195,
+      "market_cap": 182336306630.0588,
+      "change_24h": 4.268169033791745,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ADAUSDT": {
-      "price": 0.76505,
-      "market_cap": 27685470032.841137,
-      "change_24h": 5.142952978763859,
+      "price": 0.768199,
+      "market_cap": 27793582262.946835,
+      "change_24h": 5.782438432406567,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "AVAXUSDT": {
-      "price": 22.79,
-      "market_cap": 9625342128.451061,
-      "change_24h": 3.529424288044378,
+      "price": 22.76,
+      "market_cap": 9599512157.117079,
+      "change_24h": 4.028286319926099,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VETUSDT": {
-      "price": 0.02408036,
-      "market_cap": 2070337047.2961614,
-      "change_24h": 3.77209123971729,
+      "price": 0.02414411,
+      "market_cap": 2075357258.2221994,
+      "change_24h": 4.845742616089448,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VTHOUSDT": {
-      "price": 0.00187929,
-      "market_cap": 173969715.36002183,
-      "change_24h": 3.137965115177747,
+      "price": 0.00188019,
+      "market_cap": 173559186.84674308,
+      "change_24h": 3.939268894697004,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "LUNAUSDT": {
-      "price": 6.042e-05,
-      "market_cap": 338711870.8383981,
-      "change_24h": 4.440279606832066,
+      "price": 6.056e-05,
+      "market_cap": 339054320.8549204,
+      "change_24h": 5.044645087328247,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
