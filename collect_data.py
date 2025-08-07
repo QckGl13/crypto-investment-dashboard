@@ -58,6 +58,11 @@ CHANNEL_IDS: Dict[str, str] = {
     # Michael Pizzino shares a channel with Jason; we duplicate for completeness.
     "Michael Pizzino": "UCIb34uXDsfTq4PJKW0eztkA",
     "Crypto Capital Venture": "UCnMku7J_UtwlcSfZlIuQ3Kw",
+
+    # Paul Barron Network channel ID (added per user request).
+    # sourced from YouTube analytics sites such as vidIQ and SocialBlade.
+    # If the channel identifier changes in the future, update it here.
+    "Paul Barron Network": "UC4VPa7EOvObpyCRI4YKRQRw",
 }
 
 
