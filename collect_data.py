@@ -33,15 +33,19 @@ import yfinance as yf
 
 
 # Mapping of CoinGecko identifiers to ticker symbols for use with yfinance
+# Use USDT‑denominated tickers for better consistency with exchange pairs.
+# If any of these symbols are not available on Yahoo Finance via yfinance,
+# consider switching to a different data source or adjusting to a supported symbol.
 COINS: Dict[str, str] = {
-    "bitcoin": "BTC-USD",
-    "ethereum": "ETH-USD",
-    "ripple": "XRP-USD",
-    "cardano": "ADA-USD",
-    "avalanche-2": "AVAX-USD",
-    "vechain": "VET-USD",
-    "vethor-token": "VTHO-USD",
-    "terra-luna": "LUNA1-USD",
+    "bitcoin": "BTCUSDT",
+    "ethereum": "ETHUSDT",
+    "ripple": "XRPUSDT",
+    "cardano": "ADAUSDT",
+    "avalanche-2": "AVAXUSDT",
+    "vechain": "VETUSDT",
+    "vethor-token": "VTHOUSDT",
+    # Terra classic/UST pair; using LUNAUSDT as requested.
+    "terra-luna": "LUNAUSDT",
 }
 
 # YouTube channel IDs for the trusted analysts. These were derived from
