@@ -1,9 +1,9 @@
 {
-  "generated_at": "2025-08-07T13:43:08.433367Z",
+  "generated_at": "2025-08-07T21:22:49.794983Z",
   "fear_greed_index": 62,
   "sentiment_classification": "Greed",
-  "btc_dominance": 59.366404161372635,
-  "total_market_cap": 3904217106688.692,
+  "btc_dominance": 59.383406165704564,
+  "total_market_cap": 3932989939027.1104,
   "average_cycle": 0.5,
   "videos": {
     "Benjamin Cowen": [
@@ -316,6 +316,16 @@
     ],
     "Paul Barron Network": [
       {
+        "title": "GTA 6 Stablecoin Potential\ud83d\ude80Animoca's MASSIVE Crypto Treasury!\ud83d\udd25Yat Siu INTERVIEW",
+        "link": "https://www.youtube.com/watch?v=i7Dnq7dnaK8",
+        "published": "2025-08-07T19:25:59"
+      },
+      {
+        "title": "Trump Tariff Collection Day\ud83d\udd25Crypto Market Update",
+        "link": "https://www.youtube.com/watch?v=VqknO5v_KMo",
+        "published": "2025-08-07T19:17:45"
+      },
+      {
         "title": "NOT Priced In?\ud83d\udcc8Crypto Market Update",
         "link": "https://www.youtube.com/watch?v=F55uDcraf2s",
         "published": "2025-08-06T20:07:19"
@@ -379,80 +389,70 @@
         "title": "Rate Cut Predictions\ud83d\udea8Fed Meeting Tomorrow!",
         "link": "https://www.youtube.com/watch?v=lKBqvtQtj4w",
         "published": "2025-07-29T19:54:10"
-      },
-      {
-        "title": "JP Morgan vs Ripple!\ud83d\udea8Banks Target Crypto Apps & Ripple Banking!\ud83d\udd25",
-        "link": "https://www.youtube.com/watch?v=Il6h5n7H0Zw",
-        "published": "2025-07-28T19:54:56"
-      },
-      {
-        "title": "Fed Meeting Volatility Week Incoming\ud83d\udcc9Crypto Market Update",
-        "link": "https://www.youtube.com/watch?v=GBty2hAqBeE",
-        "published": "2025-07-28T19:32:54"
       }
     ]
   },
   "coins": {
     "BTCUSDT": {
-      "price": 116643,
-      "market_cap": 2320191278161.078,
-      "change_24h": 2.3909499197579565,
+      "price": 117352,
+      "market_cap": 2335650907080.919,
+      "change_24h": 1.8618128171103796,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ETHUSDT": {
-      "price": 3849.51,
-      "market_cap": 463945818556.397,
-      "change_24h": 7.144781755072429,
+      "price": 3870.95,
+      "market_cap": 467010622442.04297,
+      "change_24h": 5.2271759271958596,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "XRPUSDT": {
-      "price": 3.08,
-      "market_cap": 182336306630.0588,
-      "change_24h": 4.268169033791745,
+      "price": 3.11,
+      "market_cap": 184611145060.2448,
+      "change_24h": 3.780355789557132,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ADAUSDT": {
-      "price": 0.768199,
-      "market_cap": 27793582262.946835,
-      "change_24h": 5.782438432406567,
+      "price": 0.769474,
+      "market_cap": 27804806967.25069,
+      "change_24h": 3.6989549495440053,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "AVAXUSDT": {
-      "price": 22.76,
-      "market_cap": 9599512157.117079,
-      "change_24h": 4.028286319926099,
+      "price": 22.98,
+      "market_cap": 9691557230.420877,
+      "change_24h": 3.2893462945309224,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VETUSDT": {
-      "price": 0.02414411,
-      "market_cap": 2075357258.2221994,
-      "change_24h": 4.845742616089448,
+      "price": 0.02419861,
+      "market_cap": 2077084104.540111,
+      "change_24h": 3.1245844042713213,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VTHOUSDT": {
-      "price": 0.00188019,
-      "market_cap": 173559186.84674308,
-      "change_24h": 3.939268894697004,
+      "price": 0.00189107,
+      "market_cap": 175117886.33010665,
+      "change_24h": 2.6761775689208154,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "LUNAUSDT": {
-      "price": 6.056e-05,
-      "market_cap": 339054320.8549204,
-      "change_24h": 5.044645087328247,
+      "price": 6.078e-05,
+      "market_cap": 340519125.01663357,
+      "change_24h": 3.020959074551277,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
