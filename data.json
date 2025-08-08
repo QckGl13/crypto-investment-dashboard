@@ -1,9 +1,9 @@
 {
-  "generated_at": "2025-08-07T21:22:49.794983Z",
-  "fear_greed_index": 62,
+  "generated_at": "2025-08-08T02:38:26.199875Z",
+  "fear_greed_index": 74,
   "sentiment_classification": "Greed",
-  "btc_dominance": 59.383406165704564,
-  "total_market_cap": 3932989939027.1104,
+  "btc_dominance": 58.979371278577815,
+  "total_market_cap": 3941916791106.352,
   "average_cycle": 0.5,
   "videos": {
     "Benjamin Cowen": [
@@ -85,6 +85,11 @@
     ],
     "Jason Pizzino": [
       {
+        "title": "This Signal MUST FAIL (72 hours to go)",
+        "link": "https://www.youtube.com/watch?v=S3_pO0GMU-Y",
+        "published": "2025-08-08T01:45:45"
+      },
+      {
         "title": "The August Rally and Crash (How I\u2019m Investing This Time)",
         "link": "https://www.youtube.com/watch?v=Ynl8zJXWsOE",
         "published": "2025-08-07T02:15:05"
@@ -153,15 +158,15 @@
         "title": "We\u2019re Entering The Final Stage",
         "link": "https://www.youtube.com/watch?v=jipdHUfh6CE",
         "published": "2025-07-17T02:54:39"
-      },
-      {
-        "title": "This is BLOWING UP (My Cycle Top Signal for ETH & BTC)",
-        "link": "https://www.youtube.com/watch?v=u2CPElRUDqU",
-        "published": "2025-07-16T03:16:04"
       }
     ],
     "Michael Pizzino": [
       {
+        "title": "This Signal MUST FAIL (72 hours to go)",
+        "link": "https://www.youtube.com/watch?v=S3_pO0GMU-Y",
+        "published": "2025-08-08T01:45:45"
+      },
+      {
         "title": "The August Rally and Crash (How I\u2019m Investing This Time)",
         "link": "https://www.youtube.com/watch?v=Ynl8zJXWsOE",
         "published": "2025-08-07T02:15:05"
@@ -230,14 +235,14 @@
         "title": "We\u2019re Entering The Final Stage",
         "link": "https://www.youtube.com/watch?v=jipdHUfh6CE",
         "published": "2025-07-17T02:54:39"
-      },
-      {
-        "title": "This is BLOWING UP (My Cycle Top Signal for ETH & BTC)",
-        "link": "https://www.youtube.com/watch?v=u2CPElRUDqU",
-        "published": "2025-07-16T03:16:04"
       }
     ],
     "Crypto Capital Venture": [
+      {
+        "title": "Altcoin Season \"STARTS HERE\"! The Cardano, XRP, Ethereum GO SIGNAL...",
+        "link": "https://www.youtube.com/watch?v=PcPSu7z6XkU",
+        "published": "2025-08-08T01:28:28"
+      },
       {
         "title": "Trump CRYPTO Executive Order TODAY! SUI & CARDANO In Crosshairs!",
         "link": "https://www.youtube.com/watch?v=F2eHF-KAy5o",
@@ -307,11 +312,6 @@
         "title": "Ethereum\u2019s Time Bomb: LAST CHANCE Dip Before ALTCOIN Detonation",
         "link": "https://www.youtube.com/watch?v=P4xqkuNYtgE",
         "published": "2025-07-24T00:07:55"
-      },
-      {
-        "title": "CARDANO Window Is Closing....FAST (Setup IS INSANE)",
-        "link": "https://www.youtube.com/watch?v=hX6Qp1dZZ_M",
-        "published": "2025-07-22T16:28:43"
       }
     ],
     "Paul Barron Network": [
@@ -394,65 +394,65 @@
   },
   "coins": {
     "BTCUSDT": {
-      "price": 117352,
-      "market_cap": 2335650907080.919,
-      "change_24h": 1.8618128171103796,
+      "price": 116813,
+      "market_cap": 2324681376272.696,
+      "change_24h": 1.7913637253785641,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ETHUSDT": {
-      "price": 3870.95,
-      "market_cap": 467010622442.04297,
-      "change_24h": 5.2271759271958596,
+      "price": 3890.33,
+      "market_cap": 469474796799.30646,
+      "change_24h": 5.998039421174617,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "XRPUSDT": {
-      "price": 3.11,
-      "market_cap": 184611145060.2448,
-      "change_24h": 3.780355789557132,
+      "price": 3.32,
+      "market_cap": 196670772341.53214,
+      "change_24h": 11.134620849033551,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ADAUSDT": {
-      "price": 0.769474,
-      "market_cap": 27804806967.25069,
-      "change_24h": 3.6989549495440053,
+      "price": 0.788125,
+      "market_cap": 28495403036.320065,
+      "change_24h": 6.775622823214922,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "AVAXUSDT": {
-      "price": 22.98,
-      "market_cap": 9691557230.420877,
-      "change_24h": 3.2893462945309224,
+      "price": 23.18,
+      "market_cap": 9781793220.629541,
+      "change_24h": 4.83945864956931,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VETUSDT": {
-      "price": 0.02419861,
-      "market_cap": 2077084104.540111,
-      "change_24h": 3.1245844042713213,
+      "price": 0.02431055,
+      "market_cap": 2088844667.1000912,
+      "change_24h": 3.823628502214256,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VTHOUSDT": {
-      "price": 0.00189107,
-      "market_cap": 175117886.33010665,
-      "change_24h": 2.6761775689208154,
+      "price": 0.0019246,
+      "market_cap": 178100184.31274757,
+      "change_24h": 4.692814737455928,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "LUNAUSDT": {
-      "price": 6.078e-05,
-      "market_cap": 340519125.01663357,
-      "change_24h": 3.020959074551277,
+      "price": 6.113e-05,
+      "market_cap": 342416846.1500487,
+      "change_24h": 3.948266210373215,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
