@@ -1,12 +1,17 @@
 {
-  "generated_at": "2025-08-09T11:29:40.948539Z",
-  "fear_greed_index": 67,
+  "generated_at": "2025-08-10T11:29:34.688541Z",
+  "fear_greed_index": 69,
   "sentiment_classification": "Greed",
-  "btc_dominance": 58.01308182274779,
-  "total_market_cap": 4023405779622.8945,
+  "btc_dominance": 58.46899585160982,
+  "total_market_cap": 4016281612411.093,
   "average_cycle": 0.5,
   "videos": {
     "Benjamin Cowen": [
+      {
+        "title": "Ethereum Breaks $4k!",
+        "link": "https://www.youtube.com/watch?v=fwYb6AEUb2Q",
+        "published": "2025-08-10T03:51:22"
+      },
       {
         "title": "How to Fix the Real Estate Market",
         "link": "https://www.youtube.com/watch?v=tr2WeOktpJQ",
@@ -76,11 +81,6 @@
         "title": "Bitcoin Dominance",
         "link": "https://www.youtube.com/watch?v=ASASjr93enU",
         "published": "2025-07-24T23:15:44"
-      },
-      {
-        "title": "People Who Converted ETH to BTC",
-        "link": "https://www.youtube.com/shorts/NIZhHeDyxF0",
-        "published": "2025-07-23T02:46:29"
       }
     ],
     "Jason Pizzino": [
@@ -239,6 +239,16 @@
     ],
     "Crypto Capital Venture": [
       {
+        "title": "Altcoins are Ready to EXPLODE! Crypto Analyst's SHOCKING Prediction",
+        "link": "https://www.youtube.com/shorts/SlyfIBnbT2I",
+        "published": "2025-08-10T08:28:57"
+      },
+      {
+        "title": "ALTCOIN SEASON or Total TRAP! Ethereum at Breaking Point!",
+        "link": "https://www.youtube.com/watch?v=UWr_1a6sq7k",
+        "published": "2025-08-09T17:14:57"
+      },
+      {
         "title": "Crypto MELT UP Is Real! Altcoin Dominance BREAKOUT!",
         "link": "https://www.youtube.com/watch?v=RnrYPyqGHcs",
         "published": "2025-08-08T21:15:46"
@@ -302,19 +312,14 @@
         "title": "Ethereum MANIA Begins! SUI & Cardano About To RIP!",
         "link": "https://www.youtube.com/watch?v=oeeFWHKflsY",
         "published": "2025-07-26T16:38:41"
-      },
-      {
-        "title": "Major Bitcoin EXIT! Ethereum & Altcoins ENTER SPOTLIGHT!",
-        "link": "https://www.youtube.com/watch?v=EsbM4m7dzyA",
-        "published": "2025-07-25T16:05:22"
-      },
-      {
-        "title": "(CONFIRMED) This Is How ALTCOIN SEASON STARTS! The FLIP HAS BEGUN!",
-        "link": "https://www.youtube.com/watch?v=LDtAeL3PoKE",
-        "published": "2025-07-24T15:47:40"
       }
     ],
     "Paul Barron Network": [
+      {
+        "title": "Citadel Joins Litecoin Treasury Fund\ud83d\udd25David Schwartz $LTC INTERVIEW",
+        "link": "https://www.youtube.com/watch?v=BdSaZIKm33o",
+        "published": "2025-08-09T16:00:16"
+      },
       {
         "title": "Helium $HNT Halving\ud83d\udd25Abhay Kumar INTERVIEW",
         "link": "https://www.youtube.com/watch?v=ZReLZEIDTQo",
@@ -384,75 +389,70 @@
         "title": "Fed Recovery Pump\ud83d\ude80Technical Analysis w/ @TimWarrenTrades",
         "link": "https://www.youtube.com/watch?v=5V4iB-8qu0k",
         "published": "2025-07-31T19:28:07"
-      },
-      {
-        "title": "Fed Meeting LIVE!\ud83d\udd34Jerome Powell Rate Cut vs Crypto Market\ud83d\udd25",
-        "link": "https://www.youtube.com/watch?v=4tcGwdRCsNU",
-        "published": "2025-07-30T19:26:54"
       }
     ]
   },
   "coins": {
     "BTCUSDT": {
-      "price": 117248,
-      "market_cap": 2333937983400.821,
-      "change_24h": 0.37924150976620175,
+      "price": 118135,
+      "market_cap": 2351355661621.945,
+      "change_24h": 0.7564261031761037,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ETHUSDT": {
-      "price": 4207.12,
-      "market_cap": 507689338007.97766,
-      "change_24h": 7.647894441346057,
+      "price": 4207.57,
+      "market_cap": 507895092800.5809,
+      "change_24h": 0.009145934425792653,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "XRPUSDT": {
-      "price": 3.32,
-      "market_cap": 197092149029.10916,
-      "change_24h": -0.15384339315107778,
+      "price": 3.19,
+      "market_cap": 189382440634.47687,
+      "change_24h": -3.8882541789329226,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "ADAUSDT": {
-      "price": 0.809476,
-      "market_cap": 29279540431.183712,
-      "change_24h": 0.8222443536853613,
+      "price": 0.792051,
+      "market_cap": 28662016314.84246,
+      "change_24h": -2.1561900240345317,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "AVAXUSDT": {
-      "price": 24.66,
-      "market_cap": 10412004607.605906,
-      "change_24h": 4.89362279157585,
+      "price": 23.57,
+      "market_cap": 9941609422.796152,
+      "change_24h": -4.401184690714774,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VETUSDT": {
-      "price": 0.02523717,
-      "market_cap": 2169366085.361746,
-      "change_24h": 3.188141531600519,
+      "price": 0.02478754,
+      "market_cap": 2131353348.417521,
+      "change_24h": -1.7833705668763289,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "VTHOUSDT": {
-      "price": 0.00201613,
-      "market_cap": 186764282.5138972,
-      "change_24h": 4.228021574606332,
+      "price": 0.00196294,
+      "market_cap": 181500802.1122578,
+      "change_24h": -2.664483006109055,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
     },
     "LUNAUSDT": {
-      "price": 6.34e-05,
-      "market_cap": 355405894.38648903,
-      "change_24h": 3.4405824118382897,
+      "price": 6.2e-05,
+      "market_cap": 347568257.26678973,
+      "change_24h": -2.2340884142166373,
       "technical": {},
       "technical_risk": 0.5,
       "cycle_score": null
