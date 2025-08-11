@@ -1,461 +1,150 @@
 {
-  "generated_at": "2025-08-10T11:29:34.688541Z",
-  "fear_greed_index": 69,
-  "sentiment_classification": "Greed",
-  "btc_dominance": 58.46899585160982,
-  "total_market_cap": 4016281612411.093,
-  "average_cycle": 0.5,
-  "videos": {
-    "Benjamin Cowen": [
-      {
-        "title": "Ethereum Breaks $4k!",
-        "link": "https://www.youtube.com/watch?v=fwYb6AEUb2Q",
-        "published": "2025-08-10T03:51:22"
-      },
-      {
-        "title": "How to Fix the Real Estate Market",
-        "link": "https://www.youtube.com/watch?v=tr2WeOktpJQ",
-        "published": "2025-08-08T16:22:58"
-      },
-      {
-        "title": "Bitcoin Monthly Returns",
-        "link": "https://www.youtube.com/watch?v=G5IEOvGueGU",
-        "published": "2025-08-07T02:50:39"
-      },
-      {
-        "title": "Why Does This Crypto Cycle Feel Different?",
-        "link": "https://www.youtube.com/watch?v=uUuq9uw7mBI",
-        "published": "2025-08-05T22:09:09"
-      },
-      {
-        "title": "Bitcoin Market Cycles",
-        "link": "https://www.youtube.com/watch?v=16xiD2oEU_Y",
-        "published": "2025-08-04T11:49:13"
-      },
-      {
-        "title": "Ethereum: Dubious Speculation",
-        "link": "https://www.youtube.com/watch?v=dQmZiBgSOms",
-        "published": "2025-08-03T03:24:53"
-      },
-      {
-        "title": "Unemployment Rate Rises to 4.2%",
-        "link": "https://www.youtube.com/watch?v=Mi2Hvh1mbX8",
-        "published": "2025-08-01T23:55:40"
-      },
-      {
-        "title": "Bitcoin: The Beauty of Mathematics (Part 61)",
-        "link": "https://www.youtube.com/watch?v=V3DPOp7SbTE",
-        "published": "2025-08-01T03:45:52"
-      },
-      {
-        "title": "What if You See BTC Dominance and ETH Dominance Do This?",
-        "link": "https://www.youtube.com/shorts/NIRX-g64iX8",
-        "published": "2025-07-31T23:24:09"
-      },
-      {
-        "title": "The Fed Holds Interest Rates at 4.5%",
-        "link": "https://www.youtube.com/watch?v=6BfEEwrHJH4",
-        "published": "2025-07-31T00:03:54"
-      },
-      {
-        "title": "Bitcoin: Has Retail Arrived Yet?",
-        "link": "https://www.youtube.com/watch?v=83mJiVWn9c4",
-        "published": "2025-07-29T11:52:51"
-      },
-      {
-        "title": "BTC Dominance + ETH Dominance",
-        "link": "https://www.youtube.com/shorts/F0H3NjVDtzI",
-        "published": "2025-07-28T22:37:47"
-      },
-      {
-        "title": "ETH / BTC",
-        "link": "https://www.youtube.com/watch?v=um7swJX7Pog",
-        "published": "2025-07-27T12:48:27"
-      },
-      {
-        "title": "What if their ALT is bleeding against ETH?",
-        "link": "https://www.youtube.com/shorts/Hb777wT8pGI",
-        "published": "2025-07-25T04:22:44"
-      },
-      {
-        "title": "Bitcoin Dominance",
-        "link": "https://www.youtube.com/watch?v=ASASjr93enU",
-        "published": "2025-07-24T23:15:44"
-      }
-    ],
-    "Jason Pizzino": [
-      {
-        "title": "This Signal MUST FAIL (72 hours to go)",
-        "link": "https://www.youtube.com/watch?v=S3_pO0GMU-Y",
-        "published": "2025-08-08T01:45:45"
-      },
-      {
-        "title": "The August Rally and Crash (How I\u2019m Investing This Time)",
-        "link": "https://www.youtube.com/watch?v=Ynl8zJXWsOE",
-        "published": "2025-08-07T02:15:05"
-      },
-      {
-        "title": "The Multi-Year Crypto Crash Against Bitcoin (explained and updated)",
-        "link": "https://www.youtube.com/watch?v=0BWMhLzFrzM",
-        "published": "2025-08-05T02:37:20"
-      },
-      {
-        "title": "It's Resetting (don't panic, do this instead)",
-        "link": "https://www.youtube.com/watch?v=AiS3OW8mfew",
-        "published": "2025-08-04T02:40:33"
-      },
-      {
-        "title": "It\u2019s Failing Right On Time (is it time to buy the dip?)",
-        "link": "https://www.youtube.com/watch?v=jldPIN30gD4",
-        "published": "2025-08-01T07:16:14"
-      },
-      {
-        "title": "Time is Running Out in this Cycle (how I'm investing)",
-        "link": "https://www.youtube.com/watch?v=4V2hv6SCghY",
-        "published": "2025-07-31T06:50:04"
-      },
-      {
-        "title": "This Happens Every Time",
-        "link": "https://www.youtube.com/watch?v=8_J5BhBpxkM",
-        "published": "2025-07-29T05:15:00"
-      },
-      {
-        "title": "This is the Beginning of the End (how i'm investing)",
-        "link": "https://www.youtube.com/watch?v=zZq9TPpYpAs",
-        "published": "2025-07-28T03:54:15"
-      },
-      {
-        "title": "This is Going to Hurt (BTC XRP ETH)",
-        "link": "https://www.youtube.com/watch?v=1Gb2t4rU7SA",
-        "published": "2025-07-25T04:41:50"
-      },
-      {
-        "title": "This is Exactly What Happens Before Prices Pump",
-        "link": "https://www.youtube.com/watch?v=SZdPQjIUKyk",
-        "published": "2025-07-24T06:53:35"
-      },
-      {
-        "title": "This is looking A LOT like last cycle",
-        "link": "https://www.youtube.com/watch?v=0-xS8wAd9Z0",
-        "published": "2025-07-23T06:04:29"
-      },
-      {
-        "title": "The Last Correction (how I trade it)",
-        "link": "https://www.youtube.com/watch?v=OnEo_4C3r84",
-        "published": "2025-07-22T06:17:09"
-      },
-      {
-        "title": "It's Resetting (don't screw this part up)",
-        "link": "https://www.youtube.com/watch?v=hL-5IJYeq8E",
-        "published": "2025-07-20T02:43:50"
-      },
-      {
-        "title": "It\u2019s Starting (the most INSANE BOOM Of Our Lifetime)",
-        "link": "https://www.youtube.com/watch?v=9XTLdC1W_s8",
-        "published": "2025-07-18T00:46:11"
-      },
-      {
-        "title": "We\u2019re Entering The Final Stage",
-        "link": "https://www.youtube.com/watch?v=jipdHUfh6CE",
-        "published": "2025-07-17T02:54:39"
-      }
-    ],
-    "Michael Pizzino": [
-      {
-        "title": "This Signal MUST FAIL (72 hours to go)",
-        "link": "https://www.youtube.com/watch?v=S3_pO0GMU-Y",
-        "published": "2025-08-08T01:45:45"
-      },
-      {
-        "title": "The August Rally and Crash (How I\u2019m Investing This Time)",
-        "link": "https://www.youtube.com/watch?v=Ynl8zJXWsOE",
-        "published": "2025-08-07T02:15:05"
-      },
-      {
-        "title": "The Multi-Year Crypto Crash Against Bitcoin (explained and updated)",
-        "link": "https://www.youtube.com/watch?v=0BWMhLzFrzM",
-        "published": "2025-08-05T02:37:20"
-      },
-      {
-        "title": "It's Resetting (don't panic, do this instead)",
-        "link": "https://www.youtube.com/watch?v=AiS3OW8mfew",
-        "published": "2025-08-04T02:40:33"
-      },
-      {
-        "title": "It\u2019s Failing Right On Time (is it time to buy the dip?)",
-        "link": "https://www.youtube.com/watch?v=jldPIN30gD4",
-        "published": "2025-08-01T07:16:14"
-      },
-      {
-        "title": "Time is Running Out in this Cycle (how I'm investing)",
-        "link": "https://www.youtube.com/watch?v=4V2hv6SCghY",
-        "published": "2025-07-31T06:50:04"
-      },
-      {
-        "title": "This Happens Every Time",
-        "link": "https://www.youtube.com/watch?v=8_J5BhBpxkM",
-        "published": "2025-07-29T05:15:00"
-      },
-      {
-        "title": "This is the Beginning of the End (how i'm investing)",
-        "link": "https://www.youtube.com/watch?v=zZq9TPpYpAs",
-        "published": "2025-07-28T03:54:15"
-      },
-      {
-        "title": "This is Going to Hurt (BTC XRP ETH)",
-        "link": "https://www.youtube.com/watch?v=1Gb2t4rU7SA",
-        "published": "2025-07-25T04:41:50"
-      },
-      {
-        "title": "This is Exactly What Happens Before Prices Pump",
-        "link": "https://www.youtube.com/watch?v=SZdPQjIUKyk",
-        "published": "2025-07-24T06:53:35"
-      },
-      {
-        "title": "This is looking A LOT like last cycle",
-        "link": "https://www.youtube.com/watch?v=0-xS8wAd9Z0",
-        "published": "2025-07-23T06:04:29"
-      },
-      {
-        "title": "The Last Correction (how I trade it)",
-        "link": "https://www.youtube.com/watch?v=OnEo_4C3r84",
-        "published": "2025-07-22T06:17:09"
-      },
-      {
-        "title": "It's Resetting (don't screw this part up)",
-        "link": "https://www.youtube.com/watch?v=hL-5IJYeq8E",
-        "published": "2025-07-20T02:43:50"
-      },
-      {
-        "title": "It\u2019s Starting (the most INSANE BOOM Of Our Lifetime)",
-        "link": "https://www.youtube.com/watch?v=9XTLdC1W_s8",
-        "published": "2025-07-18T00:46:11"
-      },
-      {
-        "title": "We\u2019re Entering The Final Stage",
-        "link": "https://www.youtube.com/watch?v=jipdHUfh6CE",
-        "published": "2025-07-17T02:54:39"
-      }
-    ],
-    "Crypto Capital Venture": [
-      {
-        "title": "Altcoins are Ready to EXPLODE! Crypto Analyst's SHOCKING Prediction",
-        "link": "https://www.youtube.com/shorts/SlyfIBnbT2I",
-        "published": "2025-08-10T08:28:57"
-      },
-      {
-        "title": "ALTCOIN SEASON or Total TRAP! Ethereum at Breaking Point!",
-        "link": "https://www.youtube.com/watch?v=UWr_1a6sq7k",
-        "published": "2025-08-09T17:14:57"
-      },
-      {
-        "title": "Crypto MELT UP Is Real! Altcoin Dominance BREAKOUT!",
-        "link": "https://www.youtube.com/watch?v=RnrYPyqGHcs",
-        "published": "2025-08-08T21:15:46"
-      },
-      {
-        "title": "Altcoin Season \"STARTS HERE\"! The Cardano, XRP, Ethereum GO SIGNAL...",
-        "link": "https://www.youtube.com/watch?v=PcPSu7z6XkU",
-        "published": "2025-08-08T01:28:28"
-      },
-      {
-        "title": "Trump CRYPTO Executive Order TODAY! SUI & CARDANO In Crosshairs!",
-        "link": "https://www.youtube.com/watch?v=F2eHF-KAy5o",
-        "published": "2025-08-07T13:08:06"
-      },
-      {
-        "title": "ETHEREUM Move That Could Trigger Altcoin Mania (RARE PREDICTION)",
-        "link": "https://www.youtube.com/watch?v=UpLjLfRIjDM",
-        "published": "2025-08-07T01:09:59"
-      },
-      {
-        "title": "(FORGET THE DIP) CARDANO Fully Charging For Q4 EXPLOSION!",
-        "link": "https://www.youtube.com/watch?v=TxpFoTZhdIg",
-        "published": "2025-08-05T21:10:33"
-      },
-      {
-        "title": "ALTCOINS Locked & Loaded! ETHEREUM POWER MOVE Builds (A WARNING)",
-        "link": "https://www.youtube.com/watch?v=6w106VfoiMA",
-        "published": "2025-08-04T16:18:37"
-      },
-      {
-        "title": "4 Year CRYPTO Cycle Is Over! CARDANO SUPERCYCLE Not What You Think!",
-        "link": "https://www.youtube.com/watch?v=2OsuO6IyPwU",
-        "published": "2025-08-03T15:46:53"
-      },
-      {
-        "title": "This CRYPTO MELTDOWN Is A Trap! ETHEREUM and CARDANO Are the Bait",
-        "link": "https://www.youtube.com/watch?v=gxyco7wPP6M",
-        "published": "2025-08-01T23:25:17"
-      },
-      {
-        "title": "(WOW) SEC Unleashes PROJECT CRYPTO! Ethereum Altcoin TRIGGER ZONE!",
-        "link": "https://www.youtube.com/watch?v=vWUz-ncwRJM",
-        "published": "2025-07-31T17:30:06"
-      },
-      {
-        "title": "Crypto\u2019s GOLDEN AGE Begins! ALTCOINS TRAPPED! (Here's Why)",
-        "link": "https://www.youtube.com/watch?v=SzkuC6YdUHA",
-        "published": "2025-07-30T21:50:06"
-      },
-      {
-        "title": "Crypto \"GIGACHAD BULLRUN\" Hasn't Even Started! ALTCOINS Will Fly!",
-        "link": "https://www.youtube.com/watch?v=M4YDNXtq5m4",
-        "published": "2025-07-29T15:17:46"
-      },
-      {
-        "title": "Ethereum CONFIRMS Macro Move! SUI & Cardano ARE NEXT...",
-        "link": "https://www.youtube.com/watch?v=idYOdHl75RA",
-        "published": "2025-07-28T01:54:24"
-      },
-      {
-        "title": "Ethereum MANIA Begins! SUI & Cardano About To RIP!",
-        "link": "https://www.youtube.com/watch?v=oeeFWHKflsY",
-        "published": "2025-07-26T16:38:41"
-      }
-    ],
-    "Paul Barron Network": [
-      {
-        "title": "Citadel Joins Litecoin Treasury Fund\ud83d\udd25David Schwartz $LTC INTERVIEW",
-        "link": "https://www.youtube.com/watch?v=BdSaZIKm33o",
-        "published": "2025-08-09T16:00:16"
-      },
-      {
-        "title": "Helium $HNT Halving\ud83d\udd25Abhay Kumar INTERVIEW",
-        "link": "https://www.youtube.com/watch?v=ZReLZEIDTQo",
-        "published": "2025-08-08T19:48:04"
-      },
-      {
-        "title": "XRP Finally Free!\ud83d\udd25Ethereum Rockets to $4,000!\ud83d\ude80Technical Analysis w/ @EvanAldo",
-        "link": "https://www.youtube.com/watch?v=AbQw8sX6L2Q",
-        "published": "2025-08-08T19:09:13"
-      },
-      {
-        "title": "GTA 6 Stablecoin Potential\ud83d\ude80Animoca's MASSIVE Crypto Treasury!\ud83d\udd25Yat Siu INTERVIEW",
-        "link": "https://www.youtube.com/watch?v=i7Dnq7dnaK8",
-        "published": "2025-08-07T19:25:59"
-      },
-      {
-        "title": "Trump Tariff Collection Day\ud83d\udd25Crypto Market Update",
-        "link": "https://www.youtube.com/watch?v=VqknO5v_KMo",
-        "published": "2025-08-07T19:17:45"
-      },
-      {
-        "title": "NOT Priced In?\ud83d\udcc8Crypto Market Update",
-        "link": "https://www.youtube.com/watch?v=F55uDcraf2s",
-        "published": "2025-08-06T20:07:19"
-      },
-      {
-        "title": "OpenAI + Hedera?\ud83d\ude80$HBAR INTERVIEW\ud83d\udd25",
-        "link": "https://www.youtube.com/watch?v=TVjeAIJmtpo",
-        "published": "2025-08-06T13:00:52"
-      },
-      {
-        "title": "Trump Unleashes on Banks!\ud83d\udd25CNBC Call Crashes Market\ud83d\udcc9",
-        "link": "https://www.youtube.com/watch?v=PH1imR_fxos",
-        "published": "2025-08-05T19:11:13"
-      },
-      {
-        "title": "Franklin Templeton Making It Rain DeFi Yields!?\ud83d\udcb2Sandy Kaul INTERVIEW",
-        "link": "https://www.youtube.com/watch?v=UOFyn1kEybQ",
-        "published": "2025-08-04T19:54:30"
-      },
-      {
-        "title": "Shakeout Rally vs Uncertainty\ud83d\ude80Crypto Market Update",
-        "link": "https://www.youtube.com/watch?v=9DJD5bNm_SM",
-        "published": "2025-08-04T19:29:03"
-      },
-      {
-        "title": "Crypto Sentiment Shift in 2025\ud83d\udcc8CoinDepo INTERVIEW",
-        "link": "https://www.youtube.com/watch?v=ed9iqpCsuBQ",
-        "published": "2025-08-03T16:00:59"
-      },
-      {
-        "title": "White House Backs ETH on 10-Year Birthday\ud83c\udf89Wallstreet Incoming",
-        "link": "https://www.youtube.com/watch?v=CCnEWuMWd3c",
-        "published": "2025-08-01T20:03:40"
-      },
-      {
-        "title": "Tariff Wreck-oning Day!\ud83d\udd25Crypto Market Update\ud83d\udd25",
-        "link": "https://www.youtube.com/watch?v=zj2GHjqDG0A",
-        "published": "2025-08-01T19:57:44"
-      },
-      {
-        "title": "AVAX DeFi Explodes!!!\ud83d\ude80@elliotrades_official Blackhole INTERVIEW\ud83d\udd25",
-        "link": "https://www.youtube.com/watch?v=A_1EDZCXnbk",
-        "published": "2025-07-31T21:00:27"
-      },
-      {
-        "title": "Fed Recovery Pump\ud83d\ude80Technical Analysis w/ @TimWarrenTrades",
-        "link": "https://www.youtube.com/watch?v=5V4iB-8qu0k",
-        "published": "2025-07-31T19:28:07"
-      }
-    ]
+  "generated_at": "2025-08-11T06:28:33.227763+00:00",
+  "coins": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "XRPUSDT",
+    "ADAUSDT",
+    "AVAXUSDT",
+    "DOTUSDT",
+    "LUNAUSDT"
+  ],
+  "cmc": {
+    "BTC": {
+      "price": 122048.56513209733,
+      "market_cap": 2429340074384.8574,
+      "change_24h": 3.52382335,
+      "last_updated": "2025-08-11T06:26:00.000Z"
+    },
+    "ETH": {
+      "price": 4306.860045279104,
+      "market_cap": 519876472201.9763,
+      "change_24h": 2.23642851,
+      "last_updated": "2025-08-11T06:27:00.000Z"
+    },
+    "XRP": {
+      "price": 3.2659422556110647,
+      "market_cap": 193697763704.54602,
+      "change_24h": 0.75527457,
+      "last_updated": "2025-08-11T06:27:00.000Z"
+    },
+    "ADA": {
+      "price": 0.8214169194116785,
+      "market_cap": 29100607456.598858,
+      "change_24h": 2.01666021,
+      "last_updated": "2025-08-11T06:27:00.000Z"
+    },
+    "AVAX": {
+      "price": 24.513568111915635,
+      "market_cap": 10351473972.817163,
+      "change_24h": 2.56702013,
+      "last_updated": "2025-08-11T06:27:00.000Z"
+    },
+    "DOT": {
+      "price": 4.118960589736946,
+      "market_cap": 6614934190.402056,
+      "change_24h": 1.42777148,
+      "last_updated": "2025-08-11T06:27:00.000Z"
+    },
+    "LUNA": {
+      "price": 0.16650339145870988,
+      "market_cap": 118214816.96256644,
+      "change_24h": 0.41323608,
+      "last_updated": "2025-08-11T06:27:00.000Z"
+    }
   },
-  "coins": {
+  "three_bar": {
     "BTCUSDT": {
-      "price": 118135,
-      "market_cap": 2351355661621.945,
-      "change_24h": 0.7564261031761037,
-      "technical": {},
-      "technical_risk": 0.5,
-      "cycle_score": null
+      "timeframe": "3D",
+      "signal": "bullish"
     },
     "ETHUSDT": {
-      "price": 4207.57,
-      "market_cap": 507895092800.5809,
-      "change_24h": 0.009145934425792653,
-      "technical": {},
-      "technical_risk": 0.5,
-      "cycle_score": null
+      "timeframe": "3D",
+      "signal": "bullish"
     },
     "XRPUSDT": {
-      "price": 3.19,
-      "market_cap": 189382440634.47687,
-      "change_24h": -3.8882541789329226,
-      "technical": {},
-      "technical_risk": 0.5,
-      "cycle_score": null
+      "timeframe": "3D",
+      "signal": "bullish"
     },
     "ADAUSDT": {
-      "price": 0.792051,
-      "market_cap": 28662016314.84246,
-      "change_24h": -2.1561900240345317,
-      "technical": {},
-      "technical_risk": 0.5,
-      "cycle_score": null
+      "timeframe": "3D",
+      "signal": "bullish"
     },
     "AVAXUSDT": {
-      "price": 23.57,
-      "market_cap": 9941609422.796152,
-      "change_24h": -4.401184690714774,
-      "technical": {},
-      "technical_risk": 0.5,
-      "cycle_score": null
+      "timeframe": "3D",
+      "signal": "bullish"
     },
-    "VETUSDT": {
-      "price": 0.02478754,
-      "market_cap": 2131353348.417521,
-      "change_24h": -1.7833705668763289,
-      "technical": {},
-      "technical_risk": 0.5,
-      "cycle_score": null
-    },
-    "VTHOUSDT": {
-      "price": 0.00196294,
-      "market_cap": 181500802.1122578,
-      "change_24h": -2.664483006109055,
-      "technical": {},
-      "technical_risk": 0.5,
-      "cycle_score": null
+    "DOTUSDT": {
+      "timeframe": "3D",
+      "signal": "bullish"
     },
     "LUNAUSDT": {
-      "price": 6.2e-05,
-      "market_cap": 347568257.26678973,
-      "change_24h": -2.2340884142166373,
-      "technical": {},
-      "technical_risk": 0.5,
-      "cycle_score": null
+      "timeframe": "3D",
+      "signal": "none"
     }
+  },
+  "technical": {
+    "BTCUSDT": {
+      "rsi14": 66.14,
+      "macd": 807.3671,
+      "macd_signal": 630.1378,
+      "ma200": 99752.03,
+      "close_above_ma200": true
+    },
+    "ETHUSDT": {
+      "rsi14": 74.12,
+      "macd": 227.6839,
+      "macd_signal": 195.1244,
+      "ma200": 2520.55,
+      "close_above_ma200": true
+    },
+    "XRPUSDT": {
+      "rsi14": 58.82,
+      "macd": 0.088,
+      "macd_signal": 0.0896,
+      "ma200": 2.46,
+      "close_above_ma200": true
+    },
+    "ADAUSDT": {
+      "rsi14": 60.54,
+      "macd": 0.0122,
+      "macd_signal": 0.0132,
+      "ma200": 0.72,
+      "close_above_ma200": true
+    },
+    "AVAXUSDT": {
+      "rsi14": 58.62,
+      "macd": 0.3557,
+      "macd_signal": 0.4116,
+      "ma200": 22.08,
+      "close_above_ma200": true
+    },
+    "DOTUSDT": {
+      "rsi14": 58.22,
+      "macd": -0.0189,
+      "macd_signal": -0.0328,
+      "ma200": 4.29,
+      "close_above_ma200": false
+    },
+    "LUNAUSDT": {
+      "rsi14": null,
+      "macd": null,
+      "macd_signal": null,
+      "ma200": null,
+      "close_above_ma200": null
+    }
+  },
+  "youtube": {
+    "Benjamin Cowen": [],
+    "Jason Pizzino": [],
+    "Michael Pizzino": [],
+    "Crypto Capital Venture": []
+  },
+  "sentiment": {
+    "classification": "greed",
+    "fear_greed_index": 70
+  },
+  "cycle": {
+    "average_cycle": 0.5
   }
 }
