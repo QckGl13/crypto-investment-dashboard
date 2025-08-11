@@ -1,286 +1,131 @@
-"""
-collect_data.py
-
-This script fetches cryptocurrency data from public APIs, computes technical
-indicators and cycle metrics for a set of tracked coins, and writes the
-resulting data to a JSON file. The output JSON serves as the source of
-truth for the dashboard and downstream analysis routines.
-
-Dependencies:
-  - requests
-  - pandas
-  - pandas_ta
-  - yfinance
-  - beautifulsoup4 (not used here but installed for future scraping)
-  - feedparser
-  - jinja2 (used by send_email.py)
-
-The script is intentionally self‑contained to run inside a GitHub Actions
-workflow. Network calls are limited to the APIs specified in the project
-requirements. If an API is unavailable or times out, the script will
-raise an exception.
-"""
-
-import datetime
-import json
-from typing import Dict, List
-
-import feedparser
+# collect_data.py
+import os, json, time, requests
+from datetime import datetime, timezone
+from typing import Dict, Any, List
 import pandas as pd
-import pandas_ta as ta
-import requests
 import yfinance as yf
 
+CMC_KEY = os.getenv("COINMARKETCAP_API_KEY")
+YT_KEY  = os.getenv("YOUTUBE_API_KEY")
 
-# Mapping of CoinGecko identifiers to ticker symbols for use with yfinance
-# Use USDT‑denominated tickers for better consistency with exchange pairs.
-# If any of these symbols are not available on Yahoo Finance via yfinance,
-# consider switching to a different data source or adjusting to a supported symbol.
-COINS: Dict[str, str] = {
-    "bitcoin": "BTCUSDT",
-    "ethereum": "ETHUSDT",
-    "ripple": "XRPUSDT",
-    "cardano": "ADAUSDT",
-    "avalanche-2": "AVAXUSDT",
-    "vechain": "VETUSDT",
-    "vethor-token": "VTHOUSDT",
-    # Terra classic/UST pair; using LUNAUSDT as requested.
-    "terra-luna": "LUNAUSDT",
+# Mapea tus símbolos (usa los que estés graficando)
+COINS = {
+    "BTCUSDT": "BTC",
+    "ETHUSDT": "ETH",
+    "XRPUSDT": "XRP",
+    "ADAUSDT": "ADA",
+    "AVAXUSDT": "AVAX",
+    "DOTUSDT":  "DOT",
+    # agrega los que uses…
 }
 
-# YouTube channel IDs for the trusted analysts. These were derived from
-# publicly available information. If any channel ID changes, update
-# the corresponding value here. Each entry in this dictionary maps a
-# friendly channel name to its YouTube channel identifier.
-CHANNEL_IDS: Dict[str, str] = {
-    "Benjamin Cowen": "UCRvqjQPSeaWn-uEx-w0XOIg",
-    "Jason Pizzino": "UCIb34uXDsfTq4PJKW0eztkA",
-    # Michael Pizzino shares a channel with Jason; we duplicate for completeness.
-    "Michael Pizzino": "UCIb34uXDsfTq4PJKW0eztkA",
-    "Crypto Capital Venture": "UCnMku7J_UtwlcSfZlIuQ3Kw",
-
-    # Paul Barron Network channel ID (added per user request).
-    # sourced from YouTube analytics sites such as vidIQ and SocialBlade.
-    # If the channel identifier changes in the future, update it here.
-    "Paul Barron Network": "UC4VPa7EOvObpyCRI4YKRQRw",
+# YouTube channel IDs (ejemplo con tus 4 analistas)
+YT_CHANNELS = {
+    "Benjamin Cowen":   "UCljCQnkwqYqveXedDty75RA",
+    "Jason Pizzino":    "UCnPKf9H6178m3u-4f1R9R3Q",
+    "Michael Pizzino":  "UCtJb43uXDsfTp4PJXWbeztkA",
+    "Crypto Capital Venture": "UCmKru73_UtwcLsFzIUQ3Kw",
 }
 
-
-def fetch_prices(coin_ids: List[str]) -> Dict[str, Dict[str, float]]:
-    """Fetch current price and market data for a list of CoinGecko IDs.
-
-    Returns a nested dictionary keyed by CoinGecko ID containing
-    USD price, market cap and 24h change. Raises an exception if the
-    request fails.
-    """
-    url = "https://api.coingecko.com/api/v3/simple/price"
-    params = {
-        "ids": ",".join(coin_ids),
-        "vs_currencies": "usd",
-        "include_market_cap": "true",
-        "include_24hr_change": "true",
-        "include_last_updated_at": "true",
-    }
-    resp = requests.get(url, params=params, timeout=30)
-    resp.raise_for_status()
-    return resp.json()
-
-
-def fetch_global() -> (float, float):
-    """Fetch global market metrics from CoinGecko.
-
-    Returns the Bitcoin dominance (percentage of market cap) and total
-    market capitalisation in USD.
-    """
-    url = "https://api.coingecko.com/api/v3/global"
-    resp = requests.get(url, timeout=30)
-    resp.raise_for_status()
-    data = resp.json()["data"]
-    btc_dominance = float(data["market_cap_percentage"]["btc"])
-    total_mcap = float(data["total_market_cap"]["usd"])
-    return btc_dominance, total_mcap
-
-
-def fetch_fear_greed() -> (int, str):
-    """Fetch the current Fear & Greed index.
-
-    The API returns a list of entries; we take the most recent value. If
-    the API fails, an exception is raised.
-    """
-    url = "https://api.alternative.me/fng/"
-    resp = requests.get(url, timeout=30)
-    resp.raise_for_status()
-    data = resp.json()["data"][0]
-    return int(data["value"]), data["value_classification"]
-
-
-def fetch_youtube_videos(channel_id: str, days: int = 30, max_videos: int = 50) -> List[Dict[str, str]]:
-    """Retrieve recent videos from a YouTube channel using its RSS feed.
-
-    Args:
-        channel_id: The YouTube channel identifier.
-        days: Only videos published within this many days are retained.
-        max_videos: Maximum number of videos to return.
-
-    Returns:
-        A list of dictionaries containing the title, link and ISO
-        formatted publication timestamp for each video.
-    """
-    feed_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
-    feed = feedparser.parse(feed_url)
-    cutoff = datetime.datetime.utcnow() - datetime.timedelta(days=days)
-    videos: List[Dict[str, str]] = []
-    for entry in feed.entries[:max_videos]:
-        # published_parsed can be None if parsing fails; guard against it
-        if not getattr(entry, "published_parsed", None):
-            continue
-        published = datetime.datetime(*entry.published_parsed[:6])
-        if published < cutoff:
-            continue
-        videos.append({
-            "title": entry.title,
-            "link": entry.link,
-            "published": published.isoformat(),
-        })
-    return videos
-
-
-def compute_technicals(symbol: str) -> Dict[str, object]:
-    """Compute technical indicators and cycle metrics for a given ticker symbol.
-
-    This function downloads one year of daily price data via yfinance,
-    calculates RSI, MACD histogram, Bollinger Band width and a set of
-    Fibonacci retracement levels. It also computes a simple cycle score
-    representing where the current price lies between the yearly low and
-    high (0 = bottom, 1 = top).
-
-    Args:
-        symbol: A ticker symbol supported by yfinance (e.g. 'BTC-USD').
-
-    Returns:
-        A dictionary with the computed indicators. Missing values are
-        converted to NaN and then cast to floats for JSON serialisation.
-    """
-    # Download last 365 days of daily OHLCV data
-    df = yf.download(symbol, period="1y", interval="1d", progress=False)
-    df = df.dropna()
-    if df.empty or df.shape[0] < 30:
-        raise ValueError(f"Insufficient data for symbol {symbol}")
-    close = df["Close"]
-    # RSI with 14‑day lookback
-    rsi_series = ta.rsi(close, length=14)
-    rsi = float(rsi_series.iloc[-1]) if not pd.isna(rsi_series.iloc[-1]) else None
-    # MACD histogram using default parameters (12,26,9)
-    macd_df = ta.macd(close)
-    macd_hist = float(macd_df["MACDh_12_26_9"].iloc[-1]) if not pd.isna(macd_df["MACDh_12_26_9"].iloc[-1]) else None
-    # Bollinger Bands (20‑period, 2 std dev) and width as percentage of price
-    bb = ta.bbands(close)
-    upper = bb["BBU_20_2.0"].iloc[-1]
-    lower = bb["BBL_20_2.0"].iloc[-1]
-    bb_width = float((upper - lower) / close.iloc[-1]) if not pd.isna(upper) and not pd.isna(lower) else None
-    # Yearly high/low and Fibonacci retracement levels
-    high_price = float(close.max())
-    low_price = float(close.min())
-    fib_levels: Dict[str, float] = {}
-    for ratio in [0.236, 0.382, 0.5, 0.618, 0.786]:
-        level = high_price - (high_price - low_price) * ratio
-        fib_levels[str(ratio)] = float(level)
-    # Cycle score: 0.0 at yearly low, 1.0 at yearly high
-    current_price = float(close.iloc[-1])
-    cycle = 0.0
-    if high_price > low_price:
-        cycle = float((current_price - low_price) / (high_price - low_price))
-    # Grab the last 90 closing prices and corresponding dates for charting.
-    hist_series = close.tail(90)
-    price_history = {
-        "dates": [d.strftime("%Y-%m-%d") for d in hist_series.index],
-        "prices": [float(p) for p in hist_series],
-    }
-    return {
-        "rsi": rsi,
-        "macd_hist": macd_hist,
-        "bb_width": bb_width,
-        "high": high_price,
-        "low": low_price,
-        "fibonacci": fib_levels,
-        "cycle": cycle,
-        "history": price_history,
-    }
-
-
-def derive_technical_risk(rsi: float) -> float:
-    """Map RSI to a simple risk score between 0 and 1.
-
-    RSI values above 70 are considered overbought (high risk), below 30
-    oversold (low risk) and in between moderate. The returned value is
-    linearly scaled within these regimes.
-    """
-    if rsi is None:
-        return 0.5  # neutral if RSI is unavailable
-    if rsi >= 70:
-        return 1.0
-    if rsi <= 30:
-        return 0.0
-    # Scale linearly between 30 and 70
-    return (rsi - 30.0) / 40.0
-
-
-def main() -> None:
-    """Main entry point to orchestrate data collection and processing."""
-    coin_ids = list(COINS.keys())
-    prices = fetch_prices(coin_ids)
-    btc_dominance, total_mcap = fetch_global()
-    fng_value, fng_classification = fetch_fear_greed()
-    # Fetch YouTube data for each channel
-    videos: Dict[str, List[Dict[str, str]]] = {}
-    for name, cid in CHANNEL_IDS.items():
-        try:
-            videos[name] = fetch_youtube_videos(cid)
-        except Exception as e:
-            # If an RSS feed fails, capture the error and continue
-            videos[name] = []
-    # Process each coin
-    coin_data: Dict[str, Dict[str, object]] = {}
-    cycle_values: List[float] = []
-    for cg_id, symbol in COINS.items():
-        # Price info may be missing if API is down; guard against KeyError
-        price_info = prices.get(cg_id, {})
-        price = price_info.get("usd")
-        market_cap = price_info.get("usd_market_cap")
-        change_24h = price_info.get("usd_24h_change")
-        try:
-            tech = compute_technicals(symbol)
-            cycle_values.append(tech["cycle"])
-            tech_risk = derive_technical_risk(tech["rsi"])
-        except Exception:
-            # Fallback if technical analysis fails
-            tech = {}
-            tech_risk = 0.5
-            cycle_values.append(0.5)
-        coin_data[symbol] = {
-            "price": price,
-            "market_cap": market_cap,
-            "change_24h": change_24h,
-            "technical": tech,
-            "technical_risk": tech_risk,
-            "cycle_score": tech.get("cycle"),
+def fetch_cmc_quotes(symbols: List[str]) -> Dict[str, Any]:
+    url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"
+    headers = {"X-CMC_PRO_API_KEY": CMC_KEY}
+    params = {"symbol": ",".join(symbols), "convert": "USD"}
+    r = requests.get(url, headers=headers, params=params, timeout=30)
+    r.raise_for_status()
+    data = r.json().get("data", {})
+    out = {}
+    for sym, payload in data.items():
+        q = payload["quote"]["USD"]
+        out[sym] = {
+            "price": q["price"],
+            "market_cap": q.get("market_cap"),
+            "change_24h": q.get("percent_change_24h"),
+            "last_updated": q.get("last_updated"),
         }
-    avg_cycle = float(sum(cycle_values) / len(cycle_values)) if cycle_values else 0.5
-    # Assemble final data structure
-    output = {
-        "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
-        "fear_greed_index": fng_value,
-        "sentiment_classification": fng_classification,
-        "btc_dominance": btc_dominance,
-        "total_market_cap": total_mcap,
-        "average_cycle": avg_cycle,
-        "videos": videos,
-        "coins": coin_data,
-    }
-    # Write to JSON for use by the dashboard and analysis engine
-    with open("data.json", "w", encoding="utf-8") as outfile:
-        json.dump(output, outfile, indent=2)
+    return out
 
+def fetch_youtube_latest(channel_id: String, max_results: int = 10) -> List[Dict[str, Any]]:
+    url = "https://www.googleapis.com/youtube/v3/search"
+    params = {
+        "key": YT_KEY, "channelId": channel_id, "part": "snippet",
+        "order": "date", "maxResults": max_results, "type": "video"
+    }
+    r = requests.get(url, params=params, timeout=30)
+    r.raise_for_status()
+    items = r.json().get("items", [])
+    return [
+        {
+            "videoId": it["id"]["videoId"],
+            "title": it["snippet"]["title"],
+            "publishedAt": it["snippet"]["publishedAt"]
+        }
+        for it in items
+    ]
+
+def three_bar_signal_yf(ticker: str, timeframe: str = "3D") -> str:
+    # ticker: 'BTC-USD', 'ETH-USD', etc.
+    hist = yf.Ticker(ticker).history(period="240d", interval="1d")
+    if hist.empty:
+        return "none"
+    if timeframe.upper() == "3D":
+        ohlc = hist.resample("3D").agg({"Open":"first","High":"max","Low":"min","Close":"last"}).dropna()
+    elif timeframe.upper() == "1W":
+        ohlc = hist.resample("1W").agg({"Open":"first","High":"max","Low":"min","Close":"last"}).dropna()
+    else:
+        ohlc = hist
+    if len(ohlc) < 4:
+        return "none"
+    closes = ohlc["Close"].iloc[-4:-1]
+    up   = all(closes[i] > closes[i-1] for i in range(1, len(closes)))
+    down = all(closes[i] < closes[i-1] for i in range(1, len(closes)))
+    return "bullish" if up else "bearish" if down else "none"
+
+YF_TICKERS = {k: f"{v}-USD" for k, v in COINS.items()}
+
+def build_three_bar_map() -> Dict[str, Dict[str, str]]:
+    out = {}
+    for sym, base in COINS.items():
+        sig = three_bar_signal_yf(YF_TICKERS[sym], "3D")
+        out[sym] = {"timeframe": "3D", "signal": sig}
+        time.sleep(0.2)  # cortesía API Yahoo
+    return out
+
+def collect_youtube() -> Dict[str, Any]:
+    out = {}
+    for name, ch in YT_CHANNELS.items():
+        try:
+            out[name] = fetch_youtube_latest(ch, max_results=10)
+            time.sleep(0.2)
+        except Exception as e:
+            out[name] = {"error": str(e), "items": []}
+    return out
+
+def main():
+    # 1) Precios y métricas rápidas desde CMC
+    cmc = fetch_cmc_quotes(list(COINS.values()))
+
+    # 2) Señal 3-bar (yfinance)
+    three_bar = build_three_bar_map()
+
+    # 3) Últimos videos YouTube
+    yt = collect_youtube()
+
+    # 4) Sentimiento/ciclo: placeholders (puedes sustituir por tus fuentes)
+    sentiment = {"classification": "neutral", "fear_greed_index": 50}
+    cycle = {"average_cycle": 0.5}
+
+    data = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "coins": list(COINS.keys()),
+        "cmc": cmc,
+        "three_bar": three_bar,
+        "youtube": yt,
+        "sentiment": sentiment,
+        "cycle": cycle,
+    }
+    with open("data.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     main()
