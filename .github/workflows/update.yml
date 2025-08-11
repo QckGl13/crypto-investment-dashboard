@@ -2,7 +2,7 @@ name: Update Crypto Dashboard
 
 on:
   schedule:
-    - cron: "0 11 * * *"      # 06:00 America/Mexico_City (CDMX)
+    - cron: "0 11 * * *"   # ~06:00 America/Mexico_City
   workflow_dispatch: {}
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pandas pandas_ta yfinance
 
-      - name: Collect data (CMC + YouTube + OHLC)
+      - name: Collect data (CMC + YouTube + OHLC/3-bar + KPIs)
         run: python collect_data.py
 
       - name: Analyze & build HTML
