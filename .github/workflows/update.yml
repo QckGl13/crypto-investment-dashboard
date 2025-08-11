@@ -1,62 +1,38 @@
-name: Automated Crypto Dashboard
+name: Update Crypto Dashboard
 
 on:
   schedule:
-    # Runs at 11:00 UTC every day, which corresponds to 6:00 AM CDMX (America/Mexico_City)
-    - cron: '0 11 * * *'
-  workflow_dispatch:
-    # Allow manual triggering via the GitHub Actions UI
-    inputs: {}
-
-permissions:
-  contents: write
+    - cron: "0 11 * * *"      # 06:00 America/Mexico_City (CDMX)
+  workflow_dispatch: {}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      COINMARKETCAP_API_KEY: ${{ secrets.COINMARKETCAP_API_KEY }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install requests pandas pandas_ta yfinance
 
-      - name: Generate data
-        run: |
-          python collect_data.py
-          python analysis_engine.py
+      - name: Collect data (CMC + YouTube + OHLC)
+        run: python collect_data.py
 
-      - name: Commit and push updated data
+      - name: Analyze & build HTML
+        run: python analysis_engine.py
+
+      - name: Commit outputs
         run: |
+          git config user.email "bot@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Stage generated files
           git add data.json analysis.json email_summary.html
-          # Create commit if there are changes
-          if ! git diff --cached --quiet; then
-            git commit -m "Automated data update"
-            git push
-          else
-            echo "No changes to commit."
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Send daily email
-        run: |
-          python send_email.py
-        env:
-          EMAIL_USER: ${{ secrets.EMAIL_USER }}
-          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
-          EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
-          TIMEZONE: America/Mexico_City
-          EMAIL_SUBJECT: "💸 Crypto Investment Report"
+          git commit -m "Auto update" || echo "No changes"
+          git push
