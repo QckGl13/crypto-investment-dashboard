@@ -1,38 +1,46 @@
-name: Update Crypto Dashboard
-
-on:
-  schedule:
-    - cron: "0 11 * * *"   # ~06:00 America/Mexico_City (CDMX)
-  workflow_dispatch: {}
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-      COINMARKETCAP_API_KEY: ${{ secrets.COINMARKETCAP_API_KEY }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install deps
+name: Update Crypto Dashboard  
+  
+on:  
+  schedule:  
+    - cron: "0 11 * * *"   # ~06:00 America/Mexico_City (CDMX)  
+  workflow_dispatch: {}  
+  
+jobs:  
+  build:  
+    runs-on: ubuntu-latest  
+    env:  
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}  
+      COINMARKETCAP_API_KEY: ${{ secrets.COINMARKETCAP_API_KEY }}  
+      EMAIL_USER: ${{ secrets.EMAIL_USER }}  
+      EMAIL_PASS: ${{ secrets.EMAIL_PASS }}  
+      EMAIL_HOST: ${{ secrets.EMAIL_HOST }}  
+      EMAIL_PORT: ${{ secrets.EMAIL_PORT }}  
+      EMAIL_TO: ${{ secrets.EMAIL_TO }}  
+    steps:  
+      - uses: actions/checkout@v4  
+  
+      - uses: actions/setup-python@v5  
+        with:  
+          python-version: "3.11"  
+  
+      - name: Install deps  
         run: |
-          python -m pip install --upgrade pip
-          pip install numpy==1.26.4 pandas==2.3.1 pandas_ta==0.3.14b0 yfinance requests
-
-      - name: Collect data (CMC + YouTube + OHLC/3-bar + KPIs)
-        run: python collect_data.py
-
-      - name: Analyze & build HTML
-        run: python analysis_engine.py
-
-      - name: Commit outputs
+          python -m pip install --upgrade pip  
+          pip install numpy==1.26.4 pandas==2.3.1 pandas_ta==0.3.14b0 yfinance requests  
+  
+      - name: Collect data (CMC + YouTube + OHLC/3-bar + KPIs)  
+        run: python collect_data.py  
+  
+      - name: Analyze & build HTML  
+        run: python analysis_engine.py  
+  
+      - name: Send email report  
+        run: python send_email.py  
+  
+      - name: Commit outputs  
         run: |
-          git config user.email "bot@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git add data.json analysis.json email_summary.html
-          git commit -m "Auto update" || echo "No changes"
+          git config user.email "bot@users.noreply.github.com"  
+          git config user.name "github-actions[bot]"  
+          git add data.json analysis.json email_summary.html  
+          git commit -m "Auto update" || echo "No changes"  
           git push
