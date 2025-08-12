@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-12T02:13:36.036509+00:00",
+  "generated_at": "2025-08-12T03:49:49.840424+00:00",
   "coins": [
     "BTCUSDT",
     "ETHUSDT",
@@ -11,46 +11,46 @@
   ],
   "cmc": {
     "BTC": {
-      "price": 119049.33979391937,
-      "market_cap": 2369689370679.964,
-      "change_24h": -1.54003894,
-      "last_updated": "2025-08-12T02:12:00.000Z"
+      "price": 118867.86637826706,
+      "market_cap": 2366079263271.238,
+      "change_24h": -2.33402278,
+      "last_updated": "2025-08-12T03:49:00.000Z"
     },
     "ETH": {
-      "price": 4278.52018304213,
-      "market_cap": 516455067331.63983,
-      "change_24h": -0.88230399,
-      "last_updated": "2025-08-12T02:12:00.000Z"
+      "price": 4288.195968192519,
+      "market_cap": 517623019814.6354,
+      "change_24h": -0.133192,
+      "last_updated": "2025-08-12T03:49:00.000Z"
     },
     "XRP": {
-      "price": 3.1658713839353165,
-      "market_cap": 187762721827.3496,
-      "change_24h": -2.31554749,
-      "last_updated": "2025-08-12T02:12:00.000Z"
+      "price": 3.1509645563439563,
+      "market_cap": 186878621943.64377,
+      "change_24h": -3.20686001,
+      "last_updated": "2025-08-12T03:49:00.000Z"
     },
     "ADA": {
-      "price": 0.7826754333971896,
-      "market_cap": 27728100085.311165,
-      "change_24h": -4.04205817,
-      "last_updated": "2025-08-12T02:12:00.000Z"
+      "price": 0.7809261974684426,
+      "market_cap": 27666129328.55112,
+      "change_24h": -5.17735161,
+      "last_updated": "2025-08-12T03:49:00.000Z"
     },
     "AVAX": {
-      "price": 23.05187255192544,
-      "market_cap": 9734236062.924067,
-      "change_24h": -4.48631582,
-      "last_updated": "2025-08-12T02:12:00.000Z"
+      "price": 23.02899706957436,
+      "market_cap": 9724576312.08356,
+      "change_24h": -5.28411925,
+      "last_updated": "2025-08-12T03:49:00.000Z"
     },
     "DOT": {
-      "price": 3.9029177110166557,
-      "market_cap": 6269616345.027247,
-      "change_24h": -5.05472936,
-      "last_updated": "2025-08-12T02:12:00.000Z"
+      "price": 3.8977031516615486,
+      "market_cap": 6261239715.876432,
+      "change_24h": -5.43085492,
+      "last_updated": "2025-08-12T03:49:00.000Z"
     },
     "LUNA": {
-      "price": 0.16076375775659424,
-      "market_cap": 114139766.34898156,
-      "change_24h": -3.44190648,
-      "last_updated": "2025-08-12T02:12:00.000Z"
+      "price": 0.15979362569505226,
+      "market_cap": 113450987.68159242,
+      "change_24h": -4.52820713,
+      "last_updated": "2025-08-12T03:49:00.000Z"
     }
   },
   "three_bar": {
@@ -85,44 +85,44 @@
   },
   "technical": {
     "BTCUSDT": {
-      "rsi14": 60.16,
-      "macd": 568.1126,
-      "macd_signal": 582.2869,
-      "ma200": 99737.03,
+      "rsi14": 59.61,
+      "macd": 549.54,
+      "macd_signal": 578.5724,
+      "ma200": 99735.87,
       "close_above_ma200": true
     },
     "ETHUSDT": {
-      "rsi14": 73.62,
-      "macd": 225.4231,
-      "macd_signal": 194.6722,
-      "ma200": 2520.41,
+      "rsi14": 73.74,
+      "macd": 225.929,
+      "macd_signal": 194.7734,
+      "ma200": 2520.44,
       "close_above_ma200": true
     },
     "XRPUSDT": {
-      "rsi14": 54.93,
-      "macd": 0.08,
-      "macd_signal": 0.088,
+      "rsi14": 54.34,
+      "macd": 0.0788,
+      "macd_signal": 0.0878,
       "ma200": 2.45,
       "close_above_ma200": true
     },
     "ADAUSDT": {
-      "rsi14": 54.23,
-      "macd": 0.0111,
+      "rsi14": 53.91,
+      "macd": 0.011,
       "macd_signal": 0.0126,
       "ma200": 0.72,
       "close_above_ma200": true
     },
     "AVAXUSDT": {
-      "rsi14": 51.34,
-      "macd": 0.3039,
-      "macd_signal": 0.3867,
+      "rsi14": 51.23,
+      "macd": 0.302,
+      "macd_signal": 0.3863,
       "ma200": 22.01,
       "close_above_ma200": true
     },
     "DOTUSDT": {
-      "rsi14": 50.74,
-      "macd": -0.0126,
-      "macd_signal": -0.0285,
+      "rsi14": 50.62,
+      "macd": -0.0129,
+      "macd_signal": -0.0286,
       "ma200": 4.27,
       "close_above_ma200": false
     },
