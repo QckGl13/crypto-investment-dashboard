@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-11T20:17:18.465204+00:00",
+  "generated_at": "2025-08-12T02:13:36.036509+00:00",
   "coins": [
     "BTCUSDT",
     "ETHUSDT",
@@ -11,46 +11,46 @@
   ],
   "cmc": {
     "BTC": {
-      "price": 118729.7367834647,
-      "market_cap": 2363314579566.7075,
-      "change_24h": 0.31507468,
-      "last_updated": "2025-08-11T20:16:00.000Z"
+      "price": 119049.33979391937,
+      "market_cap": 2369689370679.964,
+      "change_24h": -1.54003894,
+      "last_updated": "2025-08-12T02:12:00.000Z"
     },
     "ETH": {
-      "price": 4236.7721098984275,
-      "market_cap": 511416232443.4157,
-      "change_24h": 0.15766537,
-      "last_updated": "2025-08-11T20:16:00.000Z"
+      "price": 4278.52018304213,
+      "market_cap": 516455067331.63983,
+      "change_24h": -0.88230399,
+      "last_updated": "2025-08-12T02:12:00.000Z"
     },
     "XRP": {
-      "price": 3.1433753489820155,
-      "market_cap": 186428518304.55695,
-      "change_24h": -1.88843921,
-      "last_updated": "2025-08-11T20:16:00.000Z"
+      "price": 3.1658713839353165,
+      "market_cap": 187762721827.3496,
+      "change_24h": -2.31554749,
+      "last_updated": "2025-08-12T02:12:00.000Z"
     },
     "ADA": {
-      "price": 0.7841703294058374,
-      "market_cap": 27781060258.04203,
-      "change_24h": -2.36735228,
-      "last_updated": "2025-08-11T20:16:00.000Z"
+      "price": 0.7826754333971896,
+      "market_cap": 27728100085.311165,
+      "change_24h": -4.04205817,
+      "last_updated": "2025-08-12T02:12:00.000Z"
     },
     "AVAX": {
-      "price": 23.17085212508212,
-      "market_cap": 9784478196.146181,
-      "change_24h": -2.76765186,
-      "last_updated": "2025-08-11T20:16:00.000Z"
+      "price": 23.05187255192544,
+      "market_cap": 9734236062.924067,
+      "change_24h": -4.48631582,
+      "last_updated": "2025-08-12T02:12:00.000Z"
     },
     "DOT": {
-      "price": 3.8980884205983815,
-      "market_cap": 6261640548.858537,
-      "change_24h": -4.05901581,
-      "last_updated": "2025-08-11T20:16:00.000Z"
+      "price": 3.9029177110166557,
+      "market_cap": 6269616345.027247,
+      "change_24h": -5.05472936,
+      "last_updated": "2025-08-12T02:12:00.000Z"
     },
     "LUNA": {
-      "price": 0.16174427791966123,
-      "market_cap": 114835920.40680334,
-      "change_24h": -2.17109457,
-      "last_updated": "2025-08-11T20:16:00.000Z"
+      "price": 0.16076375775659424,
+      "market_cap": 114139766.34898156,
+      "change_24h": -3.44190648,
+      "last_updated": "2025-08-12T02:12:00.000Z"
     }
   },
   "three_bar": {
@@ -85,44 +85,44 @@
   },
   "technical": {
     "BTCUSDT": {
-      "rsi14": 59.4,
-      "macd": 542.6173,
-      "macd_signal": 577.1878,
-      "ma200": 99735.43,
+      "rsi14": 60.16,
+      "macd": 568.1126,
+      "macd_signal": 582.2869,
+      "ma200": 99737.03,
       "close_above_ma200": true
     },
     "ETHUSDT": {
-      "rsi14": 72.02,
-      "macd": 222.0928,
-      "macd_signal": 194.0062,
-      "ma200": 2520.2,
+      "rsi14": 73.62,
+      "macd": 225.4231,
+      "macd_signal": 194.6722,
+      "ma200": 2520.41,
       "close_above_ma200": true
     },
     "XRPUSDT": {
-      "rsi14": 54.03,
-      "macd": 0.0782,
-      "macd_signal": 0.0876,
+      "rsi14": 54.93,
+      "macd": 0.08,
+      "macd_signal": 0.088,
       "ma200": 2.45,
       "close_above_ma200": true
     },
     "ADAUSDT": {
-      "rsi14": 54.5,
-      "macd": 0.0112,
+      "rsi14": 54.23,
+      "macd": 0.0111,
       "macd_signal": 0.0126,
       "ma200": 0.72,
       "close_above_ma200": true
     },
     "AVAXUSDT": {
-      "rsi14": 51.9,
-      "macd": 0.3134,
-      "macd_signal": 0.3886,
-      "ma200": 22.02,
+      "rsi14": 51.34,
+      "macd": 0.3039,
+      "macd_signal": 0.3867,
+      "ma200": 22.01,
       "close_above_ma200": true
     },
     "DOTUSDT": {
-      "rsi14": 50.6,
-      "macd": -0.013,
-      "macd_signal": -0.0286,
+      "rsi14": 50.74,
+      "macd": -0.0126,
+      "macd_signal": -0.0285,
       "ma200": 4.27,
       "close_above_ma200": false
     },
@@ -142,7 +142,7 @@
   },
   "sentiment": {
     "classification": "greed",
-    "fear_greed_index": 70
+    "fear_greed_index": 68
   },
   "cycle": {
     "average_cycle": 0.5
