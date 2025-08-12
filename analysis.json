@@ -1,22 +1,22 @@
 {
-  "generated_at": "2025-08-12T03:49:49.968032+00:00",
-  "portfolio_risk": 0.4267941175857143,
+  "generated_at": "2025-08-12T11:31:59.725079+00:00",
+  "portfolio_risk": 0.41273212366714296,
   "recommendations": {
-    "BTCUSDT": "Mantener",
+    "BTCUSDT": "Comprar",
     "ETHUSDT": "Comprar",
     "XRPUSDT": "Mantener",
     "ADAUSDT": "Mantener",
     "AVAXUSDT": "Mantener",
-    "DOTUSDT": "Mantener",
+    "DOTUSDT": "Comprar",
     "LUNAUSDT": "Mantener"
   },
   "scores": {
-    "BTCUSDT": 0.43602706834000005,
-    "ETHUSDT": 0.39539957600000003,
-    "XRPUSDT": 0.42547058003000005,
-    "ADAUSDT": 0.43030705483000004,
-    "AVAXUSDT": 0.42392735775000007,
-    "DOTUSDT": 0.41284256476000003,
-    "LUNAUSDT": 0.46358462139
+    "BTCUSDT": 0.38945238906000007,
+    "ETHUSDT": 0.38931135461000005,
+    "XRPUSDT": 0.4220226308300001,
+    "ADAUSDT": 0.41880030056000006,
+    "AVAXUSDT": 0.4140766178800001,
+    "DOTUSDT": 0.39913940600000003,
+    "LUNAUSDT": 0.45632216673000003
   }
 }
