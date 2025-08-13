@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-12T11:31:59.587236+00:00",
+  "generated_at": "2025-08-13T11:32:16.711834+00:00",
   "coins": [
     "BTCUSDT",
     "ETHUSDT",
@@ -11,46 +11,46 @@
   ],
   "cmc": {
     "BTC": {
-      "price": 118463.63284074688,
-      "market_cap": 2358051189194.098,
-      "change_24h": -1.71746302,
-      "last_updated": "2025-08-12T11:30:00.000Z"
+      "price": 120654.30100945201,
+      "market_cap": 2401659575266.241,
+      "change_24h": 1.84923264,
+      "last_updated": "2025-08-13T11:30:00.000Z"
     },
     "ETH": {
-      "price": 4275.387097243127,
-      "market_cap": 516076876282.3856,
-      "change_24h": 1.89621513,
-      "last_updated": "2025-08-12T11:30:00.000Z"
+      "price": 4676.9479356099455,
+      "market_cap": 564547790784.6567,
+      "change_24h": 9.34748751,
+      "last_updated": "2025-08-13T11:31:00.000Z"
     },
     "XRP": {
-      "price": 3.1454647966247347,
-      "market_cap": 186552440071.7214,
-      "change_24h": -2.35754361,
-      "last_updated": "2025-08-12T11:31:00.000Z"
+      "price": 3.280510190179281,
+      "market_cap": 194561764390.04794,
+      "change_24h": 4.29333667,
+      "last_updated": "2025-08-13T11:31:00.000Z"
     },
     "ADA": {
-      "price": 0.7700238163547664,
-      "market_cap": 27279887085.86812,
-      "change_24h": -3.20843352,
-      "last_updated": "2025-08-12T11:30:00.000Z"
+      "price": 0.8758487014548688,
+      "market_cap": 31188179870.886494,
+      "change_24h": 13.56176791,
+      "last_updated": "2025-08-13T11:31:00.000Z"
     },
     "AVAX": {
-      "price": 22.84325826982757,
-      "market_cap": 9646143407.394072,
-      "change_24h": -2.99220596,
-      "last_updated": "2025-08-12T11:30:00.000Z"
+      "price": 25.066218151196537,
+      "market_cap": 10584844425.930103,
+      "change_24h": 9.682182,
+      "last_updated": "2025-08-13T11:31:00.000Z"
     },
     "DOT": {
-      "price": 3.8555837371054613,
-      "market_cap": 6193641005.6196575,
-      "change_24h": -2.254802,
-      "last_updated": "2025-08-12T11:31:00.000Z"
+      "price": 4.256311059111592,
+      "market_cap": 6838089912.433745,
+      "change_24h": 10.39342806,
+      "last_updated": "2025-08-13T11:31:00.000Z"
     },
     "LUNA": {
-      "price": 0.15790314249916115,
-      "market_cap": 112108774.03047591,
-      "change_24h": -2.10738891,
-      "last_updated": "2025-08-12T11:31:00.000Z"
+      "price": 0.16745133504553067,
+      "market_cap": 118887842.15818022,
+      "change_24h": 6.0468667,
+      "last_updated": "2025-08-13T11:31:00.000Z"
     }
   },
   "three_bar": {
@@ -64,7 +64,7 @@
     },
     "XRPUSDT": {
       "timeframe": "3D",
-      "signal": "bullish"
+      "signal": "none"
     },
     "ADAUSDT": {
       "timeframe": "3D",
@@ -85,46 +85,46 @@
   },
   "technical": {
     "BTCUSDT": {
-      "rsi14": 57.72,
-      "macd": 700.3316,
-      "macd_signal": 609.1814,
-      "ma200": 99810.84,
+      "rsi14": 63.24,
+      "macd": 971.1014,
+      "macd_signal": 684.9837,
+      "ma200": 99891.35,
       "close_above_ma200": true
     },
     "ETHUSDT": {
-      "rsi14": 73.3,
-      "macd": 238.9604,
-      "macd_signal": 203.2197,
-      "ma200": 2524.99,
+      "rsi14": 78.86,
+      "macd": 277.4133,
+      "macd_signal": 217.4404,
+      "ma200": 2531.58,
       "close_above_ma200": true
     },
     "XRPUSDT": {
-      "rsi14": 53.98,
-      "macd": 0.0766,
-      "macd_signal": 0.086,
+      "rsi14": 58.61,
+      "macd": 0.0818,
+      "macd_signal": 0.085,
       "ma200": 2.46,
       "close_above_ma200": true
     },
     "ADAUSDT": {
-      "rsi14": 51.67,
-      "macd": 0.0114,
-      "macd_signal": 0.0126,
+      "rsi14": 65.31,
+      "macd": 0.019,
+      "macd_signal": 0.0139,
       "ma200": 0.72,
       "close_above_ma200": true
     },
     "AVAXUSDT": {
-      "rsi14": 50.04,
-      "macd": 0.3098,
-      "macd_signal": 0.3816,
-      "ma200": 21.96,
+      "rsi14": 59.32,
+      "macd": 0.438,
+      "macd_signal": 0.393,
+      "ma200": 21.9,
       "close_above_ma200": true
     },
     "DOTUSDT": {
-      "rsi14": 48.95,
-      "macd": -0.0026,
-      "macd_signal": -0.0213,
-      "ma200": 4.26,
-      "close_above_ma200": false
+      "rsi14": 59.5,
+      "macd": 0.0277,
+      "macd_signal": -0.0114,
+      "ma200": 4.25,
+      "close_above_ma200": true
     },
     "LUNAUSDT": {
       "rsi14": null,
@@ -142,7 +142,7 @@
   },
   "sentiment": {
     "classification": "greed",
-    "fear_greed_index": 68
+    "fear_greed_index": 73
   },
   "cycle": {
     "average_cycle": 0.5
