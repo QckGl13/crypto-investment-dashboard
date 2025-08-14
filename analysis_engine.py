@@ -2,6 +2,7 @@
 import json
 from datetime import datetime, timezone
 from typing import Dict, Any, Tuple
+import re
 
 # Pesos consolidando lo legado + nuevo (ajústalos si quieres)
 WEIGHTS = {
@@ -118,6 +119,13 @@ def compute_component_scores(data: Dict[str, Any]) -> Tuple[float, Dict[str, flo
     portfolio_risk = sum(coin_scores.values()) / max(1, len(coin_scores))
     return portfolio_risk, coin_scores
 
+# ------------------ Estrategias ------------------
+
+def extract_strategies(description: str) -> List[str]:
+    keywords = r'(strategy|estrategia|buy|sell|hold|DCA|bull|bear|accumulate|exit|position|trade)'
+    matches = re.findall(r'[^.?!]*\b{}\b[^.?!]*[.?!]'.format(keywords), description, re.IGNORECASE)
+    return list(set(matches))[:3]  # Top 3 únicas
+
 # ------------------ HTML ------------------
 
 def generate_email_summary(data: Dict[str, Any], analysis: Dict[str, Any]) -> str:
@@ -129,27 +137,37 @@ def generate_email_summary(data: Dict[str, Any], analysis: Dict[str, Any]) -> st
     fgi_cls = (data.get("sentiment") or {}).get("classification", "")
     fgi_cls = fgi_cls.title() if isinstance(fgi_cls, str) else ""
 
-    css = (
-      "body{font-family:Arial,sans-serif;margin:0;padding:20px;background:#f5f7fa;color:#333}"
-      "h1{color:#2c3e50}h2{color:#34495e}h3{color:#34495e}"
-      "table{border-collapse:collapse;width:100%;margin-top:16px}"
-      "th,td{border:1px solid #ddd;padding:8px;text-align:left}th{background:#2c3e50;color:#fff}"
-      "tr:nth-child(even){background:#f2f2f2}.badge{padding:2px 8px;border-radius:6px;font-size:12px}"
-      ".bull{background:#e6f7e6;color:#0a7d00}.bear{background:#fdeaea;color:#a80606}.none{background:#eee;color:#666}"
-      ".muted{color:#666;font-size:12px}"
-    )
+    css = """
+    body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; padding: 20px; }
+    h1, h2, h3 { color: #2c3e50; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background-color: #3498db; color: white; }
+    .positive { color: #27ae60; font-weight: bold; }
+    .negative { color: #e74c3c; font-weight: bold; }
+    .badge { padding: 2px 8px; border-radius: 6px; font-size: 12px; }
+    .bull { background: #e6f7e6; color: #0a7d00; }
+    .bear { background: #fdeaea; color: #a80606; }
+    .none { background: #eee; color: #666; }
+    ul { list-style-type: none; padding: 0; }
+    li { margin: 10px 0; background: #ecf0f1; padding: 10px; border-radius: 5px; }
+    .strategy { background: #fff3cd; padding: 5px; border-left: 4px solid #ffc107; margin-top: 5px; }
+    .legend { font-size: 0.8em; color: #7f8c8d; font-style: italic; margin-top: 5px; }
+    @media (max-width: 600px) { table { font-size: 12px; } }
+    """
 
     lines = []
     lines.append("<!DOCTYPE html>")
     lines.append('<html lang="es"><head><meta charset="UTF-8" />')
     lines.append("<title>Resumen de inversión en criptomonedas</title>")
-    lines.append("<style>" + css + "</style>")
+    lines.append(f"<style>{css}</style>")
     lines.append("</head><body>")
     lines.append("<h1>Resumen de inversión en criptomonedas</h1>")
     lines.append("<p class='muted'>Generado: {}</p>".format(datetime.now(timezone.utc).isoformat()))
     lines.append("<h2>Riesgo del portafolio: {:.2f}% — {}</h2>".format(
         analysis["portfolio_risk"] * 100, derive_recommendation(analysis["portfolio_risk"])
     ))
+    lines.append("<p class='legend'>Riesgo del portafolio: Media ponderada de componentes; <40% = Bajo (Comprar), 40-60% = Medio (Mantener), >60% = Alto (Vender).</p>")
 
     # Tabla principal
     lines.append("<h3>Detalle por activo</h3>")
@@ -172,32 +190,26 @@ def generate_email_summary(data: Dict[str, Any], analysis: Dict[str, Any]) -> st
         ch24_val = c.get("change_24h")
         price_str = "" if price_val is None else "$" + format(price_val, ".2f")
         ch24_str = "" if ch24_val is None else format(ch24_val, ".2f") + "%"
+        ch_class = "positive" if ch24_val and ch24_val > 0 else "negative" if ch24_val and ch24_val < 0 else ""
 
-        lines.append("<tr>"
-                     "<td>{}</td>"
-                     "<td>{}</td>"
-                     "<td>{}</td>"
-                     "<td>{}</td>"
-                     "<td>{}</td>"
-                     "<td>{}</td>"
-                     "<td>{}</td>"
-                     "<td><span class='badge {}'>{}</span></td>"
-                     "<td>{:.2f}%</td>"
-                     "<td>{}</td>"
-                     "</tr>".format(
-                         sym,
-                         price_str,
-                         ch24_str,
-                         "" if t.get("rsi14") is None else t["rsi14"],
-                         "" if t.get("macd") is None else t["macd"],
-                         "" if t.get("macd_signal") is None else t["macd_signal"],
-                         "" if t.get("close_above_ma200") is None else ("Sí" if t["close_above_ma200"] else "No"),
-                         cls, sig,
-                         score * 100,
-                         rec
-                     ))
+        lines.append(f"<tr>"
+                     f"<td>{sym}</td>"
+                     f"<td>{price_str}</td>"
+                     f"<td class='{ch_class}'>{ch24_str}</td>"
+                     f"<td>{'' if t.get('rsi14') is None else t['rsi14']}</td>"
+                     f"<td>{'' if t.get('macd') is None else t['macd']}</td>"
+                     f"<td>{'' if t.get('macd_signal') is None else t['macd_signal']}</td>"
+                     f"<td>{'' if t.get('close_above_ma200') is None else ('Sí' if t['close_above_ma200'] else 'No')}</td>"
+                     f"<td><span class='badge {cls}'>{sig}</span></td>"
+                     f"<td>{score * 100:.2f}%</td>"
+                     f"<td>{rec}</td>"
+                     f"</tr>")
 
     lines.append("</tbody></table>")
+    lines.append("<p class='legend'>RSI14: Índice de fuerza relativa; >70 = Sobrecomprado (posible venta), <30 = Sobrevendido (posible compra).</p>")
+    lines.append("<p class='legend'>MACD y Sig: Línea MACD vs señal; MACD > Sig = Momentum alcista, MACD < Sig = Momentum bajista.</p>")
+    lines.append("<p class='legend'>MA200▲: Cierre por encima de MA200 = Tendencia alcista, por debajo = Bajista.</p>")
+    lines.append("<p class='legend'>3-bar: Señal de 3 barras consecutivas alcistas (bullish) o bajistas (bearish).</p>")
 
     # Sección Sentiment & Ciclo
     lines.append("<h3>Sentiment & Ciclo</h3>")
@@ -208,11 +220,13 @@ def generate_email_summary(data: Dict[str, Any], analysis: Dict[str, Any]) -> st
         (data.get("cycle") or {}).get("average_cycle", None)
     ))
     lines.append("</tbody></table>")
+    lines.append("<p class='legend'>Fear & Greed: Sentimiento del mercado; Bajo (<25) = Miedo (oportunidad compra), Alto (>75) = Codicia (riesgo).</p>")
+    lines.append("<p class='legend'>Ciclo: 0 = Pico (alto riesgo), 1 = Valle (bajo riesgo).</p>")
 
     # Últimos videos (YouTube)
-    lines.append("<h3>Últimos videos de analistas</h3>")
+    lines.append("<h3>Últimos videos de analistas & Estrategias Detectadas</h3>")
     for name, items in (data.get("youtube") or {}).items():
-        lines.append("<p><b>{}</b></p>".format(name))
+        lines.append(f"<h4>{name}</h4>")
         if not items:
             lines.append("<p class='muted'>Sin datos o sin API key.</p>")
             continue
@@ -220,14 +234,52 @@ def generate_email_summary(data: Dict[str, Any], analysis: Dict[str, Any]) -> st
         for it in items[:5]:
             vid = it.get("videoId")
             title = it.get("title", "(sin título)")
-            url = "https://www.youtube.com/watch?v={}".format(vid) if vid else "#"
-            lines.append("<li><a href='{}' target='_blank' rel='noopener noreferrer'>{}</a> — {}</li>".format(
-                url, title, it.get("publishedAt", "")
-            ))
+            url = f"https://www.youtube.com/watch?v={vid}" if vid else "#"
+            pub = it.get("publishedAt", "")
+            desc = it.get("description", "")
+            strategies = extract_strategies(desc)
+            lines.append(f"<li><a href='{url}' target='_blank' rel='noopener noreferrer'>{title}</a> — {pub}")
+            if strategies:
+                lines.append("<div class='strategy'>Estrategias mencionadas: " + " ".join(strategies) + "</div>")
+            lines.append("</li>")
         lines.append("</ul>")
 
     lines.append("</body></html>")
     return "\n".join(lines)
+
+# ------------------ Dashboard interactivo ------------------
+
+def generate_dashboard_html(data: Dict[str, Any], analysis: Dict[str, Any]) -> str:
+    html = generate_email_summary(data, analysis)
+    # Agregar Chart.js y script para gráficos
+    html = html.replace('</head>', '<script src="https://cdn.jsdelivr.net/npm/chart.js"></script></head>')
+    # Embed data para JS
+    coins = data.get("coins", [])
+    rsi_data = [data["technical"].get(sym, {}).get("rsi14", 0) for sym in coins]
+    risk_data = [analysis["scores"].get(sym, 0) * 100 for sym in coins]
+    labels = json.dumps(coins)
+    rsi_json = json.dumps(rsi_data)
+    risk_json = json.dumps(risk_data)
+    html += f"""
+    <h3>Gráficos Interactivos</h3>
+    <canvas id="rsiChart" width="400" height="200"></canvas>
+    <canvas id="riskChart" width="400" height="200"></canvas>
+    <script>
+        var ctx1 = document.getElementById('rsiChart').getContext('2d');
+        new Chart(ctx1, {{
+            type: 'bar',
+            data: {{ labels: {labels}, datasets: [{{ label: 'RSI14', data: {rsi_json}, backgroundColor: '#3498db' }}] }},
+            options: {{ scales: {{ y: {{ beginAtZero: true, max: 100 }} }} }}
+        }});
+        var ctx2 = document.getElementById('riskChart').getContext('2d');
+        new Chart(ctx2, {{
+            type: 'line',
+            data: {{ labels: {labels}, datasets: [{{ label: 'Riesgo %', data: {risk_json}, borderColor: '#e74c3c' }}] }},
+            options: {{ scales: {{ y: {{ beginAtZero: true, max: 100 }} }} }}
+        }});
+    </script>
+    """
+    return html
 
 # ------------------ Main ------------------
 
@@ -245,6 +297,9 @@ def main():
     html = generate_email_summary(data, analysis)
     with open("email_summary.html", "w", encoding="utf-8") as f:
         f.write(html)
+    dashboard_html = generate_dashboard_html(data, analysis)
+    with open("dashboard.html", "w", encoding="utf-8") as f:
+        f.write(dashboard_html)
 
 if __name__ == "__main__":
     main()
