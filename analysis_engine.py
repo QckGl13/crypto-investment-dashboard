@@ -3,6 +3,8 @@ import json
 from datetime import datetime, timezone
 from typing import Dict, Any, Tuple
 import re
+import yfinance as yf
+import pandas as pd
 
 # Pesos consolidando lo legado + nuevo (ajústalos si quieres)
 WEIGHTS = {
@@ -124,7 +126,18 @@ def compute_component_scores(data: Dict[str, Any]) -> Tuple[float, Dict[str, flo
 def extract_strategies(description: str) -> list[str]:
     keywords = r'(strategy|estrategia|buy|sell|hold|DCA|bull|bear|accumulate|exit|position|trade)'
     matches = re.findall(r'[^.?!]*\b{}\b[^.?!]*[.?!]'.format(keywords), description, re.IGNORECASE)
-    return list(set(matches))[:3]  # Top 3 únicas
+    return list(set(matches))
+
+# ------------------ Monthly Returns ------------------
+
+def compute_monthly_returns(ticker: str, periods: int = 12) -> pd.DataFrame:
+    hist = yf.download(ticker, period="1y", interval="1mo")
+    if hist.empty:
+        return pd.DataFrame()
+    hist['Return'] = hist['Close'].pct_change() * 100
+    hist = hist.dropna()
+    hist.index = hist.index.strftime('%Y-%m')
+    return hist[['Return']].tail(periods).round(2)
 
 # ------------------ HTML ------------------
 
@@ -188,18 +201,23 @@ def generate_email_summary(data: Dict[str, Any], analysis: Dict[str, Any]) -> st
 
         price_val = c.get("price")
         ch24_val = c.get("change_24h")
-        price_str = "" if price_val is None else "$" + format(price_val, ".2f")
-        ch24_str = "" if ch24_val is None else format(ch24_val, ".2f") + "%"
+        price_str = "N/A" if price_val is None else "$" + format(price_val, ".2f")
+        ch24_str = "N/A" if ch24_val is None else format(ch24_val, ".2f") + "%"
         ch_class = "positive" if ch24_val and ch24_val > 0 else "negative" if ch24_val and ch24_val < 0 else ""
+
+        rsi_str = "N/A" if t.get('rsi14') is None else str(t['rsi14'])
+        macd_str = "N/A" if t.get('macd') is None else str(t['macd'])
+        macds_str = "N/A" if t.get('macd_signal') is None else str(t['macd_signal'])
+        ma_str = "N/A" if t.get('close_above_ma200') is None else ('Sí' if t['close_above_ma200'] else 'No')
 
         lines.append(f"<tr>"
                      f"<td>{sym}</td>"
                      f"<td>{price_str}</td>"
                      f"<td class='{ch_class}'>{ch24_str}</td>"
-                     f"<td>{'' if t.get('rsi14') is None else t['rsi14']}</td>"
-                     f"<td>{'' if t.get('macd') is None else t['macd']}</td>"
-                     f"<td>{'' if t.get('macd_signal') is None else t['macd_signal']}</td>"
-                     f"<td>{'' if t.get('close_above_ma200') is None else ('Sí' if t['close_above_ma200'] else 'No')}</td>"
+                     f"<td>{rsi_str}</td>"
+                     f"<td>{macd_str}</td>"
+                     f"<td>{macds_str}</td>"
+                     f"<td>{ma_str}</td>"
                      f"<td><span class='badge {cls}'>{sig}</span></td>"
                      f"<td>{score * 100:.2f}%</td>"
                      f"<td>{rec}</td>"
@@ -215,34 +233,45 @@ def generate_email_summary(data: Dict[str, Any], analysis: Dict[str, Any]) -> st
     lines.append("<h3>Sentiment & Ciclo</h3>")
     lines.append("<table><thead><tr><th>Fear & Greed</th><th>Clasificación</th><th>Ciclo (0-1)</th></tr></thead><tbody>")
     lines.append("<tr><td>{}</td><td>{}</td><td>{}</td></tr>".format(
-        "" if fgi is None else fgi,
+        "N/A" if fgi is None else fgi,
         fgi_cls,
-        (data.get("cycle") or {}).get("average_cycle", None)
+        (data.get("cycle") or {}).get("average_cycle", "N/A")
     ))
     lines.append("</tbody></table>")
     lines.append("<p class='legend'>Fear & Greed: Sentimiento del mercado; Bajo (<25) = Miedo (oportunidad compra), Alto (>75) = Codicia (riesgo).</p>")
     lines.append("<p class='legend'>Ciclo: 0 = Pico (alto riesgo), 1 = Valle (bajo riesgo).</p>")
 
-    # Últimos videos (YouTube)
-    lines.append("<h3>Últimos videos de analistas & Estrategias Detectadas</h3>")
-    for name, items in (data.get("youtube") or {}).items():
-        lines.append(f"<h4>{name}</h4>")
-        if not items:
-            lines.append("<p class='muted'>Sin datos o sin API key.</p>")
-            continue
-        lines.append("<ul>")
-        for it in items[:5]:
-            vid = it.get("videoId")
-            title = it.get("title", "(sin título)")
-            url = f"https://www.youtube.com/watch?v={vid}" if vid else "#"
-            pub = it.get("publishedAt", "")
+    # Monthly Returns Table for BTC and ETH
+    lines.append("<h3>Monthly Returns (%)</h3>")
+    for ticker in ['BTC-USD', 'ETH-USD']:
+        monthly_df = compute_monthly_returns(ticker)
+        if not monthly_df.empty:
+            lines.append(f"<h4>{ticker}</h4>")
+            lines.append("<table><thead><tr><th>Mes</th><th>Return (%)</th></tr></thead><tbody>")
+            for month, row in monthly_df.iterrows():
+                ret = row['Return']
+                ret_class = "positive" if ret > 0 else "negative" if ret < 0 else ""
+                lines.append(f"<tr><td>{month}</td><td class='{ret_class}'>{ret}</td></tr>")
+            lines.append("</tbody></table>")
+        else:
+            lines.append(f"<p>No data for {ticker}</p>")
+
+    # Estrategias Detectadas
+    lines.append("<h3>Estrategias Detectadas de Analistas</h3>")
+    all_strategies = []
+    for items in yt.values():
+        for it in items:
             desc = it.get("description", "")
             strategies = extract_strategies(desc)
-            lines.append(f"<li><a href='{url}' target='_blank' rel='noopener noreferrer'>{title}</a> — {pub}")
-            if strategies:
-                lines.append("<div class='strategy'>Estrategias mencionadas: " + " ".join(strategies) + "</div>")
-            lines.append("</li>")
+            all_strategies.extend(strategies)
+    unique_strategies = list(set(all_strategies))
+    if unique_strategies:
+        lines.append("<ul>")
+        for strat in unique_strategies:
+            lines.append(f"<li class='strategy'>{strat}</li>")
         lines.append("</ul>")
+    else:
+        lines.append("<p>No estrategias detectadas.</p>")
 
     lines.append("</body></html>")
     return "\n".join(lines)
