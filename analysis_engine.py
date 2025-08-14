@@ -121,7 +121,7 @@ def compute_component_scores(data: Dict[str, Any]) -> Tuple[float, Dict[str, flo
 
 # ------------------ Estrategias ------------------
 
-def extract_strategies(description: str) -> List[str]:
+def extract_strategies(description: str) -> list[str]:
     keywords = r'(strategy|estrategia|buy|sell|hold|DCA|bull|bear|accumulate|exit|position|trade)'
     matches = re.findall(r'[^.?!]*\b{}\b[^.?!]*[.?!]'.format(keywords), description, re.IGNORECASE)
     return list(set(matches))[:3]  # Top 3 únicas
