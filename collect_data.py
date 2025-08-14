@@ -21,10 +21,11 @@ COINS = {
 }
 YF_TICKERS = {k: f"{v}-USD" for k, v in COINS.items()}
 YT_CHANNELS = {
-    "Benjamin Cowen": "UCljCQnkwqYqveXedDty75RA",
-    "Jason Pizzino": "UCnPKf9H6178m3u-4f1R9R3Q",
-    "Michael Pizzino": "UCtJb43uXDsfTp4PJXWbeztkA",
-    "Crypto Capital Venture": "UCmKru73_UtwcLsFzIUQ3Kw",
+    "Benjamin Cowen": "UCRvqjQPSeaWn-uEx-w0XOIg",
+    "Jason Pizzino": "UCIb34uXDsfTq4PJKW0eztkA",
+    "Michael Pizzino": "UCz2wzs4KacqHth7R_N5grgA",
+    "Paul Barron Network": "UC4VPa7EOvObpyCRI4YKRQRw",
+    "Crypto Capital Venture": "UCnMku7J_UtwlcSfZlIuQ3Kw",
 }
 
 def fetch_cmc_quotes(symbols: List[str]) -> Dict[str, Any]:
@@ -62,11 +63,23 @@ def fetch_youtube_latest(channel_id: str, max_results: int = 10) -> List[Dict[st
         r = requests.get(url, params=params, timeout=30)
         r.raise_for_status()
         items = r.json().get("items", [])
-        return [{
-            "videoId": it["id"]["videoId"],
-            "title": it["snippet"]["title"],
-            "publishedAt": it["snippet"]["publishedAt"]
-        } for it in items if it.get("id", {}).get("videoId")]
+        out = []
+        for it in items:
+            if 'id' in it and 'videoId' in it['id']:
+                video_id = it['id']['videoId']
+                # Fetch full description
+                video_url = f"https://www.googleapis.com/youtube/v3/videos?part=snippet&id={video_id}&key={YT_KEY}"
+                v_r = requests.get(video_url, timeout=30)
+                v_r.raise_for_status()
+                v_data = v_r.json().get("items", [])
+                description = v_data[0]['snippet']['description'] if v_data else ''
+                out.append({
+                    "videoId": video_id,
+                    "title": it["snippet"]["title"],
+                    "publishedAt": it["snippet"]["publishedAt"],
+                    "description": description
+                })
+        return out
     except Exception:
         return []
 
@@ -122,7 +135,7 @@ def collect_youtube() -> Dict[str, Any]:
     out = {}
     for name, ch in YT_CHANNELS.items():
         out[name] = fetch_youtube_latest(ch, max_results=10)
-        time.sleep(0.2)
+        time.sleep(1)  # Para evitar límites de tasa
     return out
 
 def main():
