@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-08-23T11:26:10.678733+00:00",
+  "generated_at": "2025-08-24T11:26:33.284875+00:00",
   "coins": [
     "BTCUSDT",
     "ETHUSDT",
@@ -11,46 +11,46 @@
   ],
   "cmc": {
     "BTC": {
-      "price": 115540.63321937513,
-      "market_cap": 2300452944591.154,
-      "change_24h": 2.91713971,
-      "last_updated": "2025-08-23T11:25:00.000Z"
+      "price": 114636.58380703682,
+      "market_cap": 2282505634318.8135,
+      "change_24h": -0.7824515,
+      "last_updated": "2025-08-24T11:25:00.000Z"
     },
     "ETH": {
-      "price": 4720.496364091336,
-      "market_cap": 569798028706.2655,
-      "change_24h": 10.29093588,
-      "last_updated": "2025-08-23T11:24:00.000Z"
+      "price": 4729.524384020137,
+      "market_cap": 570887490767.2146,
+      "change_24h": 0.18641767,
+      "last_updated": "2025-08-24T11:25:00.000Z"
     },
     "XRP": {
-      "price": 3.0347484726965046,
-      "market_cap": 180513709896.3295,
-      "change_24h": 7.63452341,
-      "last_updated": "2025-08-23T11:25:00.000Z"
+      "price": 3.002345424431322,
+      "market_cap": 178586303224.2699,
+      "change_24h": -1.06773423,
+      "last_updated": "2025-08-24T11:25:00.000Z"
     },
     "ADA": {
-      "price": 0.9144587701759718,
-      "market_cap": 32668940586.13449,
-      "change_24h": 8.93381664,
-      "last_updated": "2025-08-23T11:24:00.000Z"
+      "price": 0.8893443632890311,
+      "market_cap": 31771731118.41012,
+      "change_24h": -2.74636842,
+      "last_updated": "2025-08-24T11:24:00.000Z"
     },
     "AVAX": {
-      "price": 25.759562961993833,
-      "market_cap": 10877626803.85196,
-      "change_24h": 13.9053214,
-      "last_updated": "2025-08-23T11:25:00.000Z"
+      "price": 25.00451148237344,
+      "market_cap": 10558787224.736246,
+      "change_24h": -2.93115019,
+      "last_updated": "2025-08-24T11:25:00.000Z"
     },
     "DOT": {
-      "price": 4.135774549328606,
-      "market_cap": 6657757961.797907,
-      "change_24h": 9.85404761,
-      "last_updated": "2025-08-23T11:25:00.000Z"
+      "price": 4.020477559422917,
+      "market_cap": 6473535245.174231,
+      "change_24h": -2.78779678,
+      "last_updated": "2025-08-24T11:25:00.000Z"
     },
     "LUNA": {
-      "price": 0.16169613310671277,
-      "market_cap": 114801738.33879538,
-      "change_24h": 7.15556753,
-      "last_updated": "2025-08-23T11:25:00.000Z"
+      "price": 0.15537449684533577,
+      "market_cap": 110313474.96472515,
+      "change_24h": -3.96678073,
+      "last_updated": "2025-08-24T11:24:00.000Z"
     }
   },
   "three_bar": {
@@ -137,28 +137,22 @@
   "youtube": {
     "Benjamin Cowen": [
       {
-        "videoId": "JRGbGbQu_EU",
-        "title": "Ethereum Eyes All Time Highs",
-        "publishedAt": "2025-08-22T19:41:53Z",
-        "description": "Ethereum eyes all time highs.\n\nInto The Cryptoverse Premium SALE:\nhttps://intothecryptoverse.com\n\nInto The Cryptoverse Newsletter:\nhttps://newsletter.intothecryptoverse.com/\n\nLIFETIME OPTION:\nhttps://intothecryptoverse.com/product/subscription-to-the-premium-list-lifetime/\n\nAlternative Option:\nhttps://www.patreon.com/intothecryptoverse\n\nMerch:\nhttps://store.intothecryptoverse.com/\n\n\nDisclaimer: The information presented within this video is NOT financial advice.\n\nTelegram: https://t.me/intocryptoverse\nTwitter: https://twitter.com/intocryptoverse\nTikTok: tiktok.com/@benjamincowencrypto\nInstagram: https://www.instagram.com/bjcowen/\nDiscord: https://discord.gg/UGwc6eR\nFacebook: https://www.facebook.com/groups/intothecryptoverse\nReddit: https://www.reddit.com/r/intothecryptoverse/\nWebsite: https://intothecryptoverse.com/"
-      },
-      {
         "videoId": "972Lwizj9os",
         "title": "Bitcoin - Diminishing Returns",
         "publishedAt": "2025-08-22T18:01:45Z",
         "description": "Into The Cryptoverse Premium CURRENTLY ON SALE: \nhttps://intothecryptoverse.com\n\nInto The Cryptoverse Newsletter:\nhttps://newsletter.intothecryptoverse.com/\n\nLIFETIME OPTION:\nhttps://intothecryptoverse.com/product/subscription-to-the-premium-list-lifetime/\n\nAlternative Option:\nhttps://www.patreon.com/intothecryptoverse\n\nMerch:\nhttps://store.intothecryptoverse.com/\n\n\nDisclaimer: The information presented within this video is NOT financial advice.\n\nTelegram: https://t.me/intocryptoverse\nTwitter: https://twitter.com/intocryptoverse\nTikTok: tiktok.com/@benjamincowencrypto\nInstagram: https://www.instagram.com/bjcowen/\nDiscord: https://discord.gg/UGwc6eR\nFacebook: https://www.facebook.com/groups/intothecryptoverse\nReddit: https://www.reddit.com/r/intothecryptoverse/\nWebsite: https://intothecryptoverse.com/"
       },
       {
+        "videoId": "NA2_o6QIuUg",
+        "title": "Bitcoin Market Cycles",
+        "publishedAt": "2025-08-22T02:11:29Z",
+        "description": "Let's talk about the current #Bitcoin market cycle and make comparisons to prior market cycles!\n\nInto The Cryptoverse Premium SALE:\nhttps://intothecryptoverse.com\n\nInto The Cryptoverse Newsletter:\nhttps://newsletter.intothecryptoverse.com/\n\nLIFETIME OPTION:\nhttps://intothecryptoverse.com/product/subscription-to-the-premium-list-lifetime/\n\nAlternative Option:\nhttps://www.patreon.com/intothecryptoverse\n\nMerch:\nhttps://store.intothecryptoverse.com/\n\n\nDisclaimer: The information presented within this video is NOT financial advice.\n\nTelegram: https://t.me/intocryptoverse\nTwitter: https://twitter.com/intocryptoverse\nTikTok: tiktok.com/@benjamincowencrypto\nInstagram: https://www.instagram.com/bjcowen/\nDiscord: https://discord.gg/UGwc6eR\nFacebook: https://www.facebook.com/groups/intothecryptoverse\nReddit: https://www.reddit.com/r/intothecryptoverse/\nWebsite: https://intothecryptoverse.com/"
+      },
+      {
         "videoId": "dWW3QcU1KjI",
         "title": "ETH / BTC",
         "publishedAt": "2025-08-20T19:57:22Z",
         "description": "Let's talk about the #ETH / #BTC valuation and what are some realistic expectations to have.\n\nInto The Cryptoverse Premium SALE:\nhttps://intothecryptoverse.com\n\nInto The Cryptoverse Newsletter:\nhttps://newsletter.intothecryptoverse.com/\n\nLIFETIME OPTION:\nhttps://intothecryptoverse.com/product/subscription-to-the-premium-list-lifetime/\n\nAlternative Option:\nhttps://www.patreon.com/intothecryptoverse\n\nMerch:\nhttps://store.intothecryptoverse.com/\n\n\nDisclaimer: The information presented within this video is NOT financial advice.\n\nTelegram: https://t.me/intocryptoverse\nTwitter: https://twitter.com/intocryptoverse\nTikTok: tiktok.com/@benjamincowencrypto\nInstagram: https://www.instagram.com/bjcowen/\nDiscord: https://discord.gg/UGwc6eR\nFacebook: https://www.facebook.com/groups/intothecryptoverse\nReddit: https://www.reddit.com/r/intothecryptoverse/\nWebsite: https://intothecryptoverse.com/"
-      },
-      {
-        "videoId": "FDKUa_sFV1o",
-        "title": "Bitcoin Right Now...",
-        "publishedAt": "2025-08-19T17:23:33Z",
-        "description": "Into The Cryptoverse Premium CURRENTLY ON SALE:\nhttps://intothecryptoverse.com\n\nInto The Cryptoverse Newsletter:\nhttps://newsletter.intothecryptoverse.com/\n\nLIFETIME OPTION:\nhttps://intothecryptoverse.com/product/subscription-to-the-premium-list-lifetime/\n\nAlternative Option:\nhttps://www.patreon.com/intothecryptoverse\n\nMerch:\nhttps://store.intothecryptoverse.com/\n\n\nDisclaimer: The information presented within this video is NOT financial advice.\n\nTelegram: https://t.me/intocryptoverse\nTwitter: https://twitter.com/intocryptoverse\nTikTok: tiktok.com/@benjamincowencrypto\nInstagram: https://www.instagram.com/bjcowen/\nDiscord: https://discord.gg/UGwc6eR\nFacebook: https://www.facebook.com/groups/intothecryptoverse\nReddit: https://www.reddit.com/r/intothecryptoverse/\nWebsite: https://intothecryptoverse.com/"
       },
       {
         "videoId": "nmdSKv5TqYI",
@@ -279,12 +273,6 @@
         "description": "🔴 NEW SUBSCRIBERS FREE REPORTS →  https://tiacrypto.com/subscribe/\n🏆 Free 7-Day Trial, TIA Premium Membership → https://tiacrypto.com/\n🔥 Free 7-Day Trial, TIA Gann Swing Indicator → https://indicators.tiacrypto.com/\n\nMy Preferred Trading Platforms (Use These Links For Exclusive Bonuses):\n🏅 Bybit, Deposit $100, Get $50! → https://partner.bybit.com/b/tiacrypto\n🏅 Weex, No-KYC! Instant VIP2 25% Fee Discount! → https://www.weex.com/en/register?vipCode=tiacrypto\n🏅 Blofin, No-KYC! 10% cashback → https://partner.blofin.com/d/TIACRYPTO\n🏅 Swyftx Free $30 (Best Aus/Nz Crypto Exchange) → https://trade.swyftx.com/register/?ref=michaelpizzino&promoRef=pizzino30\n🏅 Bitget, Free $30,000 → https://partner.bitget.com/bg/BITGETTIACRYPTO\n🏆 TradingView $15 Off (Best Charting Software) → https://bit.ly/3O9UoiM\n🤝 Trezor Wallet (Protect Your Crypto) → https://trezor.go2cloud.org/SH28\n🤝 NordVPN 30-Day Risk-Free Money Back Guarantee! (Protect Your Privacy) → https://nordvpn.com/tiacrypto\n\nMORE FROM US!\nTIA Premium (Learn How To Trade) → https://tiacrypto.com/#join-now\nTwitter (Market commentary) → https://twitter.com/PizzinoMichael\nInstagram (Daily life) → https://instagram.com/michaelpizzinotrades?igshid=MmVlMjlkMTBhMg==\nMaster Of Macro Analysis → https://www.youtube.com/@JasonPizzinoOfficial\n\nBefore continuing, read the financial disclaimer & warning below.\n\n1. I am not a financial advisor. The ideas presented in this video are personal opinions and for educational and entertainment purposes only. You (and only you) are responsible for the financial decisions that you make.\n2. Most traders lose money. Trading of any kind is dangerous, and most traders show a net loss over time.\n3. Do not mirror trade me or anyone else. Mirror trading is extremely risky (see 4.)\n4. Buying low and selling high or selling high and buying low can still produce a net loss over time (position size is a major factor that determines profitability). Always prove profitability in a simulator before trading with real money.\n5. If you do not agree to the above or the terms and conditions found here: https://tiacrypto.com/terms-and-conditions/, you should not continue watching these videos or any other information provided in content, videos or sites.\n\n⏰ Timestamps\n00:00 New highs!\n00:36 Market Data\n03:43 Sentiment\n04:17 BTC Bitcoin\n05:45 ETH Ethereum\n07:11 ADA Cardano\n07:50 SOL Solana\n08:21 SUI Sui\n08:41 XRP Ripple\n\n#cryptotrading #bitcoin #crypto\n\nThis video, and its contents, are intended to be general in nature and provided for educational and informational purposes only. Michael Pizzino, The Investor Accelerator Pty Ltd and any other affiliated party are not a licensed financial advisors and does not provide any financial or professional advice.\n\nInvesting and trading is high-risk. The outcomes and information from our videos and teachings are not indicative of your future results, earnings or performance. We advise you to seek financial or professional advice relevant to your circumstances prior to making any financial or investment decisions.\n\nBy accessing and viewing our videos, you acknowledge that you have reviewed and agree to the terms of our full disclaimer, which is available here: https://tiacrypto.com/disclaimer/\n\nAffiliate Disclaimer: Some of the links on this page and mentioned in these videos are affiliate links, meaning, at no additional cost to you, I may earn a commission if you click through and make a purchase and/or subscribe."
       },
       {
-        "videoId": "sQDr_eOcpSc",
-        "title": "Trap signal explained. [BTC, ETH, XRP]",
-        "publishedAt": "2025-08-12T02:01:20Z",
-        "description": "🔴 NEW SUBSCRIBERS FREE REPORTS →  https://tiacrypto.com/subscribe/\n🏆 Free 7-Day Trial, TIA Premium Membership → https://tiacrypto.com/\n🔥 Free 7-Day Trial, TIA Gann Swing Indicator → https://indicators.tiacrypto.com/\n\nMy Preferred Trading Platforms (Use These Links For Exclusive Bonuses):\n🏅 Bybit, Deposit $100, Get $50! → https://partner.bybit.com/b/tiacrypto\n🏅 Weex, No-KYC! Instant VIP2 25% Fee Discount! → https://www.weex.com/en/register?vipCode=tiacrypto\n🏅 Blofin, No-KYC! 10% cashback → https://partner.blofin.com/d/TIACRYPTO\n🏅 Swyftx Free $30 (Best Aus/Nz Crypto Exchange) → https://trade.swyftx.com/register/?ref=michaelpizzino&promoRef=pizzino30\n🏅 Bitget, Free $30,000 → https://partner.bitget.com/bg/BITGETTIACRYPTO\n🏆 TradingView $15 Off (Best Charting Software) → https://bit.ly/3O9UoiM\n🤝 Trezor Wallet (Protect Your Crypto) → https://trezor.go2cloud.org/SH28\n🤝 NordVPN 30-Day Risk-Free Money Back Guarantee! (Protect Your Privacy) → https://nordvpn.com/tiacrypto\n\nMORE FROM US!\nTIA Premium (Learn How To Trade) → https://tiacrypto.com/#join-now\nTwitter (Market commentary) → https://twitter.com/PizzinoMichael\nInstagram (Daily life) → https://instagram.com/michaelpizzinotrades?igshid=MmVlMjlkMTBhMg==\nMaster Of Macro Analysis → https://www.youtube.com/@JasonPizzinoOfficial\n\nBefore continuing, read the financial disclaimer & warning below.\n\n1. I am not a financial advisor. The ideas presented in this video are personal opinions and for educational and entertainment purposes only. You (and only you) are responsible for the financial decisions that you make.\n2. Most traders lose money. Trading of any kind is dangerous, and most traders show a net loss over time.\n3. Do not mirror trade me or anyone else. Mirror trading is extremely risky (see 4.)\n4. Buying low and selling high or selling high and buying low can still produce a net loss over time (position size is a major factor that determines profitability). Always prove profitability in a simulator before trading with real money.\n5. If you do not agree to the above or the terms and conditions found here: https://tiacrypto.com/terms-and-conditions/, you should not continue watching these videos or any other information provided in content, videos or sites.\n\n⏰ Timestamps\n00:00 Trap Signal\n00:53 Recap & Volume\n02:22 The Signal\n04:49 Market Structure\n06:37 BTC Bitcoin\n08:20 ETH Ethereum\n08:38 XRP Ripple\n09:06 SUI Sui\n09:24 SOL Solana\n09:37 ADA Cardano\n\n#cryptotrading #bitcoin #crypto\n\nThis video, and its contents, are intended to be general in nature and provided for educational and informational purposes only. Michael Pizzino, The Investor Accelerator Pty Ltd and any other affiliated party are not a licensed financial advisors and does not provide any financial or professional advice.\n\nInvesting and trading is high-risk. The outcomes and information from our videos and teachings are not indicative of your future results, earnings or performance. We advise you to seek financial or professional advice relevant to your circumstances prior to making any financial or investment decisions.\n\nBy accessing and viewing our videos, you acknowledge that you have reviewed and agree to the terms of our full disclaimer, which is available here: https://tiacrypto.com/disclaimer/\n\nAffiliate Disclaimer: Some of the links on this page and mentioned in these videos are affiliate links, meaning, at no additional cost to you, I may earn a commission if you click through and make a purchase and/or subscribe."
-      },
-      {
         "videoId": "KOMf5mGDUD8",
         "title": "The Final Stage. [BTC, ETH, XRP, ADA, SOL, SUI]",
         "publishedAt": "2025-08-11T01:37:28Z",
@@ -295,6 +283,12 @@
         "title": "Time is running out... [BTC, ETH, XRP]",
         "publishedAt": "2025-08-08T01:15:21Z",
         "description": "🔴 NEW SUBSCRIBERS FREE REPORTS →  https://tiacrypto.com/subscribe/\n🏆 Free 7-Day Trial, TIA Premium Membership → https://tiacrypto.com/\n🔥 Free 7-Day Trial, TIA Gann Swing Indicator → https://indicators.tiacrypto.com/\n\nMy Preferred Trading Platforms (Use These Links For Exclusive Bonuses):\n🏅 Bybit, Deposit $100, Get $50! → https://partner.bybit.com/b/tiacrypto\n🏅 Weex, No-KYC! Instant VIP2 25% Fee Discount! → https://www.weex.com/en/register?vipCode=tiacrypto\n🏅 Blofin, No-KYC! 10% cashback → https://partner.blofin.com/d/TIACRYPTO\n🏅 Swyftx Free $30 (Best Aus/Nz Crypto Exchange) → https://trade.swyftx.com/register/?ref=michaelpizzino&promoRef=pizzino30\n🏅 Bitget, Free $30,000 → https://partner.bitget.com/bg/BITGETTIACRYPTO\n🏆 TradingView $15 Off (Best Charting Software) → https://bit.ly/3O9UoiM\n🤝 Trezor Wallet (Protect Your Crypto) → https://trezor.go2cloud.org/SH28\n🤝 NordVPN 30-Day Risk-Free Money Back Guarantee! (Protect Your Privacy) → https://nordvpn.com/tiacrypto\n\nMORE FROM US!\nTIA Premium (Learn How To Trade) → https://tiacrypto.com/#join-now\nTwitter (Market commentary) → https://twitter.com/PizzinoMichael\nInstagram (Daily life) → https://instagram.com/michaelpizzinotrades?igshid=MmVlMjlkMTBhMg==\nMaster Of Macro Analysis → https://www.youtube.com/@JasonPizzinoOfficial\n\nBefore continuing, read the financial disclaimer & warning below.\n\n1. I am not a financial advisor. The ideas presented in this video are personal opinions and for educational and entertainment purposes only. You (and only you) are responsible for the financial decisions that you make.\n2. Most traders lose money. Trading of any kind is dangerous, and most traders show a net loss over time.\n3. Do not mirror trade me or anyone else. Mirror trading is extremely risky (see 4.)\n4. Buying low and selling high or selling high and buying low can still produce a net loss over time (position size is a major factor that determines profitability). Always prove profitability in a simulator before trading with real money.\n5. If you do not agree to the above or the terms and conditions found here: https://tiacrypto.com/terms-and-conditions/, you should not continue watching these videos or any other information provided in content, videos or sites.\n\n⏰ Timestamps\n00:00 Intro\n01:00 Structure - Elliott Wave\n03:33 Sentiment\n04:12 Market Data\n05:46 Bitcoin Macro\n06:21 BTC Short Term\n09:05 ETH Ethereum\n09:36 SOL Solana\n09:51 XRP Ripple\n10:21 ADA Cardano\n\n#cryptotrading #bitcoin #crypto\n\nThis video, and its contents, are intended to be general in nature and provided for educational and informational purposes only. Michael Pizzino, The Investor Accelerator Pty Ltd and any other affiliated party are not a licensed financial advisors and does not provide any financial or professional advice.\n\nInvesting and trading is high-risk. The outcomes and information from our videos and teachings are not indicative of your future results, earnings or performance. We advise you to seek financial or professional advice relevant to your circumstances prior to making any financial or investment decisions.\n\nBy accessing and viewing our videos, you acknowledge that you have reviewed and agree to the terms of our full disclaimer, which is available here: https://tiacrypto.com/disclaimer/\n\nAffiliate Disclaimer: Some of the links on this page and mentioned in these videos are affiliate links, meaning, at no additional cost to you, I may earn a commission if you click through and make a purchase and/or subscribe."
+      },
+      {
+        "videoId": "jnoYNIrx0IA",
+        "title": "Fakeout warning... [BTC, ETH, XRP]",
+        "publishedAt": "2025-08-07T02:29:12Z",
+        "description": "🔴 NEW SUBSCRIBERS FREE REPORTS →  https://tiacrypto.com/subscribe/\n🏆 Free 7-Day Trial, TIA Premium Membership → https://tiacrypto.com/\n🔥 Free 7-Day Trial, TIA Gann Swing Indicator → https://indicators.tiacrypto.com/\n\nMy Preferred Trading Platforms (Use These Links For Exclusive Bonuses):\n🏅 Bybit, Deposit $100, Get $50! → https://partner.bybit.com/b/tiacrypto\n🏅 Weex, No-KYC! Instant VIP2 25% Fee Discount! → https://www.weex.com/en/register?vipCode=tiacrypto\n🏅 Blofin, No-KYC! 10% cashback → https://partner.blofin.com/d/TIACRYPTO\n🏅 Swyftx Free $30 (Best Aus/Nz Crypto Exchange) → https://trade.swyftx.com/register/?ref=michaelpizzino&promoRef=pizzino30\n🏅 Bitget, Free $30,000 → https://partner.bitget.com/bg/BITGETTIACRYPTO\n🏆 TradingView $15 Off (Best Charting Software) → https://bit.ly/3O9UoiM\n🤝 Trezor Wallet (Protect Your Crypto) → https://trezor.go2cloud.org/SH28\n🤝 NordVPN 30-Day Risk-Free Money Back Guarantee! (Protect Your Privacy) → https://nordvpn.com/tiacrypto\n\nMORE FROM US!\nTIA Premium (Learn How To Trade) → https://tiacrypto.com/#join-now\nTwitter (Market commentary) → https://twitter.com/PizzinoMichael\nInstagram (Daily life) → https://instagram.com/michaelpizzinotrades?igshid=MmVlMjlkMTBhMg==\nMaster Of Macro Analysis → https://www.youtube.com/@JasonPizzinoOfficial\n\nBefore continuing, read the financial disclaimer & warning below.\n\n1. I am not a financial advisor. The ideas presented in this video are personal opinions and for educational and entertainment purposes only. You (and only you) are responsible for the financial decisions that you make.\n2. Most traders lose money. Trading of any kind is dangerous, and most traders show a net loss over time.\n3. Do not mirror trade me or anyone else. Mirror trading is extremely risky (see 4.)\n4. Buying low and selling high or selling high and buying low can still produce a net loss over time (position size is a major factor that determines profitability). Always prove profitability in a simulator before trading with real money.\n5. If you do not agree to the above or the terms and conditions found here: https://tiacrypto.com/terms-and-conditions/, you should not continue watching these videos or any other information provided in content, videos or sites.\n\n⏰ Timestamps\n00:00 Bullish Signal\n00:42 Market Data\n03:42 Sentiment\n05:08 Bitcoin Macro\n06:26 BTC Daily Analysis\n08:16 Short-term Chart\n10:20 ETH Ethereum\n11:12 SOL Solana\n11:58 XRP Ripple\n12:20 ADA Cardano\n\n#cryptotrading #bitcoin #crypto\n\nThis video, and its contents, are intended to be general in nature and provided for educational and informational purposes only. Michael Pizzino, The Investor Accelerator Pty Ltd and any other affiliated party are not a licensed financial advisors and does not provide any financial or professional advice.\n\nInvesting and trading is high-risk. The outcomes and information from our videos and teachings are not indicative of your future results, earnings or performance. We advise you to seek financial or professional advice relevant to your circumstances prior to making any financial or investment decisions.\n\nBy accessing and viewing our videos, you acknowledge that you have reviewed and agree to the terms of our full disclaimer, which is available here: https://tiacrypto.com/disclaimer/\n\nAffiliate Disclaimer: Some of the links on this page and mentioned in these videos are affiliate links, meaning, at no additional cost to you, I may earn a commission if you click through and make a purchase and/or subscribe."
       }
     ],
     "Paul Barron Network": [
@@ -361,6 +355,12 @@
     ],
     "Crypto Capital Venture": [
       {
+        "videoId": "nvEaYXhmtG4",
+        "title": "CRYPTO About To Fake Everyone Out! (ONE Dip BEFORE RUN!)",
+        "publishedAt": "2025-08-23T17:20:24Z",
+        "description": "Track risk models, plan exits, and stay ahead!\n40% OFF 👉 https://app.cryptocapitalventure.ai\n\nSome new data suggests crypto may be getting ready for a dip. If so we explor does this mean for the crypto bull market and altcoins like ethereum and cardano.\n\nIntro 00:00\nCrypto about to fall… 2:00\nBTC dominance 3:45Ethereum 4:40\nCardano 8:05\nAltcoin dip 9:05\n\n🌟 Follow Me On My Socials!\n\n📸 Instagram: instagram.com/dangambardello\n🐦 X: x.com/cryptorecruitr\n🎵 TikTok: tiktok.com/@thecryptocapitalventure\n\n🟩 Bitcoin 4 Year Cycle Prediction - This May Change Your Mind On BTC\nhttps://youtu.be/IsKI359lAbQ\n\n⚡ Catch Me On X\n⚡ http://x.com/cryptorecruitr\n\nCrypto Capital Venture New - Cycles of Bitcoin - https://www.tradingview.com/chart/BLX/IzGnRABO-The-Cycles-Of-Bitcoin-Speculative\n☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰\n\n*The above video references an opinion and is for news/information and entertainment purposes only. It is not intended to be investment advice, financial advice, or any solicitation, recommendation, endorsement, or offer that you buy or sell any cryptocurrency or securities. Trading in cryptocurrencies and securities is a high risk activity involving risk of loss so please seek a duly licensed professional for investment or financial advice. The information provided on this video should not be used to make any investment or financial decisions without consulting your financial or investment advisor. This video contains my opinion only and is not intended to cause harm or defame anyone or any entity.\n\nCrypto Capital Venture is big on tracking bitcoin market in particular. The general premise of technical analysis videos on Crypto Capital Venture is that although Bitcoin price price moves very in a very volatile way, there is much opportunity in being prepared for upside and downside. We also cover Bitcoin news on this channel as it comes out.\n\n#crypto #cryptocurrency #cryptonews #cryptocurrency #cryptocapitalventure #blockchain #finance #stock #investment #crypto #altcoin"
+      },
+      {
         "videoId": "WFHofn3DzlM",
         "title": "CRYPTO OVERDRIVE: Powell Ignites ETHEREUM &amp; CARDANO Rally",
         "publishedAt": "2025-08-22T16:13:38Z",
@@ -387,8 +387,8 @@
     ]
   },
   "sentiment": {
-    "classification": "greed",
-    "fear_greed_index": 60
+    "classification": "neutral",
+    "fear_greed_index": 53
   },
   "cycle": {
     "average_cycle": 0.5
